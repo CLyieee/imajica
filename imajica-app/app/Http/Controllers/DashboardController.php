@@ -26,6 +26,23 @@ class DashboardController extends Controller
         return view('page.new-loyalty');
     }
 
+    public function customer_report()
+    {
+        return view('customer-report');
+    }
+    public function service_product()
+    {
+        return view('service-product');
+    }
+    public function employee_report()
+    {
+        return view('employee-report');
+    }
+    public function expenses_report()
+    {
+        return view('expenses-report');
+
+
     public function sales_transaction()
     {
         return view('page.sales-transaction');
@@ -71,6 +88,7 @@ class DashboardController extends Controller
     public function system_settings()
     {
         return view('page.system-settings');
+
     }
 }
 
