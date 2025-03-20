@@ -86,7 +86,7 @@
         <ul class="menu-inner py-1">
           <!-- Dashboards -->
 
-          <li class="menu-item active">
+          <li class="menu-item">
             <a href="/dashboard" class="menu-link">
               <i class="menu-icon icon-base ti tabler-home"></i>
               <div data-i18n="Dashboard">Dashboard</div>
@@ -104,6 +104,47 @@
               <div data-i18n="Booking">Booking</div>
             </a>
           </li>
+
+
+          <li class="menu-item open active">
+      
+      <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon icon-base ti tabler-chart-pie "></i>
+        <div data-i18n="Accounting">Accounting</div>
+      </a>
+      <ul class="menu-sub">
+        <li class="menu-item ">
+          <a href="/sales-transaction" class="menu-link">
+            <div data-i18n="Sales Transaction">Sales Transaction</div>
+          </a>
+        </li>
+    
+        <li class="menu-item">
+          <a href="/commision-employee" class="menu-link">
+            <div data-i18n="Commision for Employee">Commision for Employee</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="/employee-sales" class="menu-link">
+            <div data-i18n="Employee Sales">Employee Sales</div>
+          </a>
+        </li>
+    
+        <li class="menu-item">
+          <a href="/purchase" class="menu-link">
+            <div data-i18n="Purchase">Purchase</div>
+          </a>
+        </li>
+
+        <li class="menu-item">
+          <a href="/void-logs" class="menu-link">
+            <div data-i18n="Void Logs">Void Logs</div>
+          </a>
+        </li>
+         
+      </ul>
+    </li> 
+
 
           <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -125,8 +166,7 @@
             </ul>
           </li>
 
-          <!-- e-commerce-app menu start -->
-          <!--- <li class="menu-item">
+          <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
           <i class="menu-icon icon-base ti tabler-shopping-cart"></i>
           <div data-i18n="Product Management">Product Management</div>
@@ -139,7 +179,7 @@
             </a>
             <ul class="menu-sub">
               <li class="menu-item">
-                <a href="app-ecommerce-product-list.html" class="menu-link">
+                <a href="product-list.html" class="menu-link">
                   <div data-i18n="Product List">Product List</div>
                 </a>
               </li>
@@ -161,7 +201,7 @@
             </a>
             <ul class="menu-sub">
               <li class="menu-item">
-                <a href="app-ecommerce-order-list.html" class="menu-link">
+                <a href="order-list.html" class="menu-link">
                   <div data-i18n="Order List">Order List</div>
                 </a>
               </li>
@@ -171,7 +211,12 @@
                 </a>
               </li>
             </ul>
-          </li>-->
+          </li>
+   
+        </ul>
+      </li>
+
+
 
           <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
@@ -214,39 +259,7 @@
             </ul>
           </li>
 
-          <!-- Academy menu start -->
-
-          <!-- Academy menu end 
-     
-      <li class="menu-item">
-        <a href="javascript:void(0);" class="menu-link menu-toggle">
-          <i class="menu-icon icon-base ti tabler-file-dollar"></i>
-          <div data-i18n="Invoice">Invoice</div>
-        </a>
-        <ul class="menu-sub">
-          <li class="menu-item">
-            <a href="app-invoice-list.html" class="menu-link">
-              <div data-i18n="List">List</div>
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="app-invoice-preview.html" class="menu-link">
-              <div data-i18n="Preview">Preview</div>
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="app-invoice-edit.html" class="menu-link">
-              <div data-i18n="Edit">Edit</div>
-            </a>
-          </li>
-          <li class="menu-item">
-            <a href="app-invoice-add.html" class="menu-link">
-              <div data-i18n="Add">Add</div>
-            </a>
-          </li>
-        </ul>
-      </li>-->
-
+  
           <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">
               <i class="menu-icon icon-base ti tabler-users"></i>
@@ -375,6 +388,16 @@
               </li>
             </ul>
           </li>
+
+
+
+          <li class="menu-item">
+        <a href="/system-settings" class="menu-link">
+            <i class="menu-icon icon-base ti tabler-adjustments"></i>
+            <div data-i18n="System Settings">System Settings</div>
+        </a>
+    </li>
+
 
           <li class="menu-item">
             <a href="login.html" class="menu-link">

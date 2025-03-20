@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,13 +16,17 @@
         </div>
 
         <div class="login-container">
+            <div class="login-image">
+            <img src="{{ asset('logo/imajica.png') }}" alt="Intracode Logo" class="logo" style="width: 150px; height: auto;">
+                <h2>Welcome to Imajica</h2>
+                <p>Log in to manage and review your Imajica services with ease. Enter your credentials to access your account and stay up-to-date with your information.</p>
+            </div>
             <div class="login-content">
                 <div class="login-box">
                     <div class="brand">
-                        <img src="{{ asset('logo/logo-bg.png') }}" alt="Intracode Logo" class="logo">
+                        <img src="{{ asset('') }}" alt="Intracode Logo" class="logo" style="width: 150px; height: auto;">
                         <h2>Sign in</h2>
                     </div>
-
                     <form id="loginForm" class="login-form">
                         <div class="form-group">
                             <label for="email">Email</label>
@@ -39,10 +40,6 @@
                         <button type="submit" class="login-btn">SIGN IN</button>
                     </form>
                 </div>
-            </div>
-            <div class="login-image">
-                <h2>Access Your Payroll System</h2>
-                <p>Log in to manage and review your payroll with ease. Enter your credentials to access your account and stay up-to-date with your payroll information.</p>
             </div>
         </div>
     </div>
