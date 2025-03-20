@@ -25,4 +25,33 @@ class DashboardController extends Controller
     {
         return view('page.new-loyalty');
     }
+
+    public function loyalty_list()
+    {
+        return view('page.loyalty-list');
+    }
+    public function new_patient()
+    {
+        return view('page.new-patient');
+    }
+    public function patient_list()
+    {
+        return view('page.patient-list');
+    }
+    public function new_supplier()
+    {
+        return view('page.new-supplier');
+    }
+    public function supplier_list()
+    {
+        return view('page.supplier-list');
+    }
+    public function new_staff()
+    {
+        return view('page.new-staff');
+    }
+    public function staff_list()
+    {
+        return view('page.staff-list');
+    }    
 }
