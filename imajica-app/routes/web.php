@@ -46,3 +46,23 @@ use App\Http\Controllers\DashboardController;
 
             Route::get('/system-settings', [DashboardController::class, 'system_settings'])->name('page.system-settings');
 
+Route::get('/new-loyalty', [DashboardController::class, 'new_loyalty'])->name('page.new-loyalty');
+
+Route::get('/loyalty-list', [DashboardController::class, 'loyalty_list'])->name('page.loyalty-list');
+
+Route::get('/new-patient', [DashboardController::class, 'new_patient'])->name('page.new-patient');
+
+Route::get('/patient-list', [DashboardController::class, 'patient_list'])->name('page.patient-list');
+
+Route::get('/new-supplier', [DashboardController::class, 'new_supplier'])->name('page.new-supplier');
+
+Route::get('/supplier-list', [DashboardController::class, 'supplier_list'])->name('page.supplier-list');
+
+Route::get('/new-staff', [DashboardController::class, 'new_staff'])->name('page.new-staff');
+
+Route::get('/staff-list', [DashboardController::class, 'staff_list'])->name('page.staff-list');
+
+Route::get('/new-branch', [DashboardController::class, 'new_branch'])->name('page.new-branch');
+
+Route::get('/branch-list', [DashboardController::class, 'branch_list'])->name('page.branch-list');
+

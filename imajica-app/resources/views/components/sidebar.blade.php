@@ -226,13 +226,13 @@
             </a>
             <ul class="menu-sub">
               <li class="menu-item">
-                <a href="new-supplier.html" class="menu-link">
+                <a href="/new-supplier" class="menu-link">
                   <div data-i18n="New Supplier">New Supplier</div>
                 </a>
               </li>
 
               <li class="menu-item">
-                <a href="supplier-list.html" class="menu-link">
+                <a href="/supplier-list" class="menu-link">
                   <div data-i18n="Supplier List">Supplier List</div>
                 </a>
               </li>
@@ -267,13 +267,13 @@
             </a>
             <ul class="menu-sub">
               <li class="menu-item">
-                <a href="new-patient.html" class="menu-link">
+                <a href="/new-patient" class="menu-link">
                   <div data-i18n="New Patient">New Patient</div>
                 </a>
               </li>
 
               <li class="menu-item">
-                <a href="patient-list.html" class="menu-link">
+                <a href="/patient-list" class="menu-link">
                   <div data-i18n="Patient List">Patient List</div>
                 </a>
               </li>
@@ -287,13 +287,13 @@
             </a>
             <ul class="menu-sub">
               <li class="menu-item">
-                <a href="new-staff.html" class="menu-link">
+                <a href="/new-staff" class="menu-link">
                   <div data-i18n="New Staff">New Staff</div>
                 </a>
               </li>
 
               <li class="menu-item">
-                <a href="staff-list.html" class="menu-link">
+                <a href="/staff-list" class="menu-link">
                   <div data-i18n="Staff List">Staff List</div>
                 </a>
               </li>
@@ -307,13 +307,13 @@
             </a>
             <ul class="menu-sub">
               <li class="menu-item">
-                <a href="new-branch.html" class="menu-link">
+                <a href="/new-branch" class="menu-link">
                   <div data-i18n="New Branch">New Branch</div>
                 </a>
               </li>
 
               <li class="menu-item">
-                <a href="branch-list.html" class="menu-link">
+                <a href="/branch-list" class="menu-link">
                   <div data-i18n="Branch List">Branch List</div>
                 </a>
               </li>
@@ -353,7 +353,7 @@
               </li>
 
               <li class="menu-item">
-                <a href="loyalty-list.html" class="menu-link">
+                <a href="/loyalty-list" class="menu-link">
                   <div data-i18n="Loyalty Rewards List">
                     Loyalty Rewards List
                   </div>
