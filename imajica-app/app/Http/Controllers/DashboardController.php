@@ -61,5 +61,71 @@ class DashboardController extends Controller
     public function branch_list()
     {
         return view('page.branch-list');
+
+    public function customer_report()
+    {
+        return view('customer-report');
+    }
+    public function service_product()
+    {
+        return view('service-product');
+    }
+    public function employee_report()
+    {
+        return view('employee-report');
+    }
+    public function expenses_report()
+    {
+        return view('expenses-report');
+
+
+    public function sales_transaction()
+    {
+        return view('page.sales-transaction');
+    }
+    public function employee_sales()
+    {
+        return view('page.employee-sales');
+    }
+
+    public function commision_employee()
+    {
+        return view('page.commision-employee');
+    }
+
+    public function purchase()
+    {
+        return view('page.purchase');
+    }
+    public function void_logs()
+    {
+        return view('page.void-logs');
+    }
+    public function product_list()
+    {
+        return view('page.product-list');
+    }
+    public function order_list()
+    {
+        return view('page.order-list');
+    }
+    public function order_details()
+    {
+        return view('page.order-details');
+    }
+    public function add_product()
+    {
+        return view('page.add-product');
+    }
+    public function category_list()
+    {
+        return view('page.category-list');
+    }
+    public function system_settings()
+    {
+        return view('page.system-settings');
+
+
     }
 }
+

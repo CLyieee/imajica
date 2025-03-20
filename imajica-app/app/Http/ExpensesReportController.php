@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class LoginController extends Controller
+class ExpensesReportController extends Controller
 {
     public function index()
     {
-        return view('page.index');
+        return view('page.expenses-report');
     }
 
 }
