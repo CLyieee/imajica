@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use  App\Http\Controllers\LoginController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
 
 
         Route::get('/', [LoginController::class, 'index'])->name('page.index');
@@ -44,3 +45,4 @@ use App\Http\Controllers\DashboardController;
             Route::get('/category-list', [DashboardController::class, 'category_list'])->name('page.category-list');
 
             Route::get('/system-settings', [DashboardController::class, 'system_settings'])->name('page.system-settings');
+
