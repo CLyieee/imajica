@@ -1,15 +1,11 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Imajica Easethetics - Login</title>
+    <title>Imajica Aesthetics - Login</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
-    
 </head>
 
 <body>
@@ -26,7 +22,8 @@
                         <h2>Sign in</h2>
                     </div>
 
-                    <form id="loginForm" class="login-form">
+                    <form class="login-form" method="POST" action="{{ route('login') }}">
+                        @csrf
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" id="email" name="email" placeholder="Email" required>
@@ -38,20 +35,22 @@
                         <a href="#" class="forgot-password">Forgot your password?</a>
                         <button type="submit" class="login-btn">SIGN IN</button>
                     </form>
+
+                    @if ($errors->any())
+                        <div class="error-messages">
+                            @foreach ($errors->all() as $error)
+                                <p class="error">{{ $error }}</p>
+                            @endforeach
+                        </div>
+                    @endif
                 </div>
             </div>
+
             <div class="login-image">
                 <h2>Access Your Payroll System</h2>
                 <p>Log in to manage and review your payroll with ease. Enter your credentials to access your account and stay up-to-date with your payroll information.</p>
             </div>
         </div>
     </div>
-
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Add login logic here
-        });
-    </script>
 </body>
 </html>
