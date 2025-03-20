@@ -297,25 +297,15 @@ margin-top: 20px; /* Add margin to move the cards down */
       }
     </style>
   </head>
-
-  <body>
-  @include('components.sidebar')
-
-    <div class="menu-mobile-toggler d-xl-none rounded-1 layout-wrapper">
-      <a
-        href="javascript:void(0);"
-        class="layout-menu-toggle menu-link text-large text-bg-secondary p-2 rounded-1"
-      >
-        <i class="ti tabler-menu icon-base"></i>
-        <i class="ti tabler-chevron-right icon-base"></i>
-      </a>
+  <div class="layout-wrapper layout-content-navbar">
+    <div id="layout-menu">
+      @include('components.sidebar')
     </div>
     <div class="container-p-y">
       <div class="container rounded">
         <!-- Removed Customer Report Summary -->
         <div class="service-product-report">
           <h2>Service/Product Report Summary</h2>
-      
           <div class="metrics">
             <div class="metric-card">
               <h5>Total Revenue</h5>

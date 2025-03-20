@@ -28,21 +28,21 @@ class DashboardController extends Controller
 
     public function customer_report()
     {
-        return view('customer-report');
+        return view('page.customer-report');
     }
     public function service_product()
     {
-        return view('service-product');
+        return view('page.service-product');
     }
     public function employee_report()
     {
-        return view('employee-report');
+        return view('page.employee-report');
     }
     public function expenses_report()
     {
-        return view('expenses-report');
+        return view('page.expenses-report');
 
-
+    }
     public function sales_transaction()
     {
         return view('page.sales-transaction');

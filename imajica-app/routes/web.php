@@ -46,3 +46,14 @@ use App\Http\Controllers\DashboardController;
 
             Route::get('/system-settings', [DashboardController::class, 'system_settings'])->name('page.system-settings');
 
+            Route::get('/customer-report', [DashboardController::class, 'customer_report'])->name('page.customer-report');
+
+            Route::get('/service-product', [DashboardController::class, 'service_product'])->name('page.service-product');
+
+            Route::get('/employee-report', [DashboardController::class, 'employee_report'])->name('page.employee-report');
+            
+            Route::get('/expenses-report', [DashboardController::class, 'expenses_report'])->name('page.expenses-report');
+
+
+
+

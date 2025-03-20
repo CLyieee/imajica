@@ -362,12 +362,47 @@
             </ul>
           </li>
 
-          <li class="menu-item">
-            <a href="reports.html" class="menu-link">
-              <i class="menu-icon icon-base ti tabler-table"></i>
-              <div data-i18n="Reports">Reports</div>
-            </a>
-          </li>
+
+
+    
+          <li class="menu-item ">
+      
+      <a href="javascript:void(0);" class="menu-link menu-toggle">
+        <i class="menu-icon icon-base ti tabler-table "></i>
+        <div data-i18n="Reports">Reports</div>
+      </a>
+      <ul class="menu-sub">
+        <li class="menu-item ">
+          <a href="/customer-report" class="menu-link">
+            <div data-i18n="Customer Report">Customer Report</div>
+          </a>
+        </li>
+    
+        <li class="menu-item">
+          <a href="/service-product" class="menu-link">
+            <div data-i18n="Service / Product">Service / Product</div>
+          </a>
+        </li>
+        <li class="menu-item">
+          <a href="/employee-report" class="menu-link">
+            <div data-i18n="Employee Report">Employee Report</div>
+          </a>
+        </li>
+    
+        <li class="menu-item">
+          <a href="/expenses-report" class="menu-link">
+            <div data-i18n="Expenses Report">Expenses Report</div>
+          </a>
+        </li>
+
+
+         
+      </ul>
+    </li> 
+
+
+
+
 
           <li class="menu-item">
             <a href="javascript:void(0);" class="menu-link menu-toggle">

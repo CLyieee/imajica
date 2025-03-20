@@ -34,6 +34,9 @@
 
     <!-- End Google Tag Manager -->
 
+
+
+    
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="logo.png" />
 
@@ -132,7 +135,7 @@
         margin: auto;
         flex: 1;
         padding: 20px;
-        margin-left: 300px;
+        margin-left: 280px;
         padding: 2rem;
         background: linear-gradient(135deg, #eef2f3, #f5f5f5);
         margin-top: 15px;
@@ -215,14 +218,15 @@
 
       #layout-menu {
         width: 280px;
-        background: white;
-        height: 100vh;
         position: fixed;
-        left: 0;
         top: 0;
-        padding: 1rem;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        bottom: 0;
         overflow-y: auto;
+      }
+
+      .container-p-y {
+        margin-left: 280px;
+        padding: 20px;
       }
 
       .menu-mobile-toggler {
@@ -236,16 +240,10 @@
       /* Mobile responsiveness */
       @media (max-width: 1199px) {
         #layout-menu {
-          transform: translateX(-100%);
-          transition: transform 0.3s ease;
-          z-index: 999;
-        }
-
-        #layout-menu.show {
           transform: translateX(0);
         }
 
-        .container {
+        .container-p-y {
           margin-left: 0;
           padding-top: 4rem;
         }
@@ -254,39 +252,34 @@
           display: block;
         }
       }
+
+      .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+      }
     </style>
   </head>
-
-  <body>
-    @include('components.sidebar')
-    <div class="menu-mobile-toggler d-xl-none rounded-1 layout-wrapper">
-      <a
-        href="javascript:void(0);"
-        class="layout-menu-toggle menu-link text-large text-bg-secondary p-2 rounded-1"
-      >
-        <i class="ti tabler-menu icon-base"></i>
-        <i class="ti tabler-chevron-right icon-base"></i>
-      </a>
+  <div class="layout-wrapper layout-content-navbar">
+    <div id="layout-menu">
+      @include('components.sidebar')
     </div>
-<div class="container-p-y">
-       <div class="container rounded  ">
-      <div class="header">
-        <h1>Customer Report Summary</h1>
-      
-      </div>
+    <div class="container-p-y">
+      <div class="container rounded">
+        <div class="header">
+          <h1>Customer Report Summary</h1>
+        </div>
 
         <div class="metrics">
           <div class="metric-card">
             <i class="ti tabler-currency-dollar mb-2" style="font-size: 24px; color: #28a745;"></i>
             <h5>Total Sales</h5>
             <h4>₱191,600.00</h4>
-        
           </div>
           <div class="metric-card">
             <i class="ti tabler-users-group mb-2" style="font-size: 24px; color: #007bff;"></i>
             <h5>Top Customers</h5>
             <h4>John Smith</h4>
-    
           </div>
         </div>
 
@@ -333,8 +326,8 @@
                 </div>
               </div>
             </div>
-            <div class="table-responsive">
-              <table class="table table-hover">
+            <div class="table-responsive clearfix">
+              <table class="table table-hover" style="width: 100%;">
                 <thead>
                   <tr style="background-color: #1e4d2b;">
                     <th style="color: white; font-weight: 500;">Rank</th>
@@ -401,172 +394,164 @@
             </div>
           </div>
         </div>
-
-      
-      </div>      
-    </div>
-
-
-
-    <script>
-      document
-        .querySelector(".menu-mobile-toggler")
-        .addEventListener("click", function () {
-          document.querySelector("#layout-menu").classList.toggle("show");
-        });
-
-      // Search functionality
-      document.getElementById('searchInput').addEventListener('keyup', function() {
-        let searchValue = this.value.toLowerCase();
-        let tableRows = document.querySelectorAll('tbody tr');
-        
-        tableRows.forEach(row => {
-          let name = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
-          let email = row.querySelector('td:nth-child(4)').textContent.toLowerCase();
-          
-          if (name.includes(searchValue) || email.includes(searchValue)) {
-            row.style.display = '';
-          } else {
-            row.style.display = 'none';
-          }
-        });
-      });
-
-      // Update the script section - remove calendar input related code
-      document.addEventListener('DOMContentLoaded', function() {
-          // Custom range toggle
-          document.getElementById('customRangeBtn').addEventListener('click', function(e) {
-              e.stopPropagation();
-              document.querySelector('.custom-range-inputs').classList.toggle('d-none');
-          });
-
-          document.querySelectorAll('[data-filter]').forEach(button => {
-              button.addEventListener('click', function(e) {
-                  if (this.getAttribute('data-filter') === 'custom') return;
-                  
-                  const filterType = this.getAttribute('data-filter');
-                  const now = new Date();
-                  let startDate, endDate;
-                  
-                  switch(filterType) {
-                      case 'tomorrow':
-                          startDate = endDate = new Date(now.setDate(now.getDate() + 1));
-                          break;
-                      case 'today':
-                          startDate = endDate = now;
-                          break;
-                      case 'yesterday':
-                          startDate = endDate = new Date(now.setDate(now.getDate() - 1));
-                          break;
-                      case 'last7days':
-                          endDate = new Date();
-                          startDate = new Date(now.setDate(now.getDate() - 7));
-                          break;
-                      case 'last30days':
-                          endDate = new Date();
-                          startDate = new Date(now.setDate(now.getDate() - 30));
-                          break;
-                      case 'thisMonth':
-                          startDate = new Date(now.getFullYear(), now.getMonth(), 1);
-                          endDate = new Date(now.getFullYear(), now.getMonth() + 1, 0);
-                          break;
-                      case 'lastMonth':
-                          startDate = new Date(now.getFullYear(), now.getMonth() - 1, 1);
-                          endDate = new Date(now.getFullYear(), now.getMonth(), 0);
-                          break;
-                  }
-                  
-                  updateFilterText(startDate, endDate);
-              });
-          });
-
-          document.getElementById('applyCustomRange').addEventListener('click', function(e) {
-              e.stopPropagation();
-              const startDate = new Date(document.getElementById('dateFrom').value);
-              const endDate = new Date(document.getElementById('dateTo').value);
-              updateFilterText(startDate, endDate);
-          });
-
-          function updateFilterText(startDate, endDate) {
-              const formatDate = date => date.toLocaleDateString('en-US', {
-                  month: 'short',
-                  day: 'numeric',
-                  year: 'numeric'
-              });
-              
-              const filterText = startDate.getTime() === endDate.getTime() ? 
-                  formatDate(startDate) : 
-                  `${formatDate(startDate)} - ${formatDate(endDate)}`;
-                  
-              document.getElementById('selectedDateText').textContent = `: ${filterText}`;
-              
-              // Hide dropdown after selection
-              document.querySelector('.dropdown-menu').classList.remove('show');
-              document.querySelector('.custom-range-inputs').classList.add('d-none');
-          }
-      });
-    </script>
-  </body>
-        
-
-          <div class="content-backdrop fade"></div>
-        </div>
-        <!-- Content wrapper -->
       </div>
-      <!-- / Layout page -->
     </div>
-
-    <!-- Overlay -->
-    <div class="layout-overlay layout-menu-toggle"></div>
-
-    <!-- Drag Target Area To SlideIn Menu On Small Screens -->
-    <div class="drag-target"></div>
-    
   </div>
-  <!-- / Layout wrapper -->
 
-  <!-- Core JS -->
-  <!-- build:js assets/vendor/js/theme.js -->
+  <script>
+    document
+      .querySelector(".menu-mobile-toggler")
+      .addEventListener("click", function () {
+        document.querySelector("#layout-menu").classList.toggle("show");
+      });
 
-  <!-- Footer -->
- 
-  <!-- / Footer -->
+    // Search functionality
+    document.getElementById('searchInput').addEventListener('keyup', function() {
+      let searchValue = this.value.toLowerCase();
+      let tableRows = document.querySelectorAll('tbody tr');
+      
+      tableRows.forEach(row => {
+        let name = row.querySelector('td:nth-child(2)').textContent.toLowerCase();
+        let email = row.querySelector('td:nth-child(4)').textContent.toLowerCase();
+        
+        if (name.includes(searchValue) || email.includes(searchValue)) {
+          row.style.display = '';
+        } else {
+          row.style.display = 'none';
+        }
+      });
+    });
 
-  <script src="../../assets/vendor/libs/jquery/jquery.js"></script>
+    // Update the script section - remove calendar input related code
+    document.addEventListener('DOMContentLoaded', function() {
+        // Custom range toggle
+        document.getElementById('customRangeBtn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            document.querySelector('.custom-range-inputs').classList.toggle('d-none');
+        });
 
-  <script src="../../assets/vendor/libs/popper/popper.js"></script>
-  <script src="../../assets/vendor/js/bootstrap.js"></script>
-  <script src="../../assets/vendor/libs/node-waves/node-waves.js"></script>
+        document.querySelectorAll('[data-filter]').forEach(button => {
+            button.addEventListener('click', function(e) {
+                if (this.getAttribute('data-filter') === 'custom') return;
+                
+                const filterType = this.getAttribute('data-filter');
+                const now = new Date();
+                let startDate, endDate;
+                
+                switch(filterType) {
+                    case 'tomorrow':
+                        startDate = endDate = new Date(now.setDate(now.getDate() + 1));
+                        break;
+                    case 'today':
+                        startDate = endDate = now;
+                        break;
+                    case 'yesterday':
+                        startDate = endDate = new Date(now.setDate(now.getDate() - 1));
+                        break;
+                    case 'last7days':
+                        endDate = new Date();
+                        startDate = new Date(now.setDate(now.getDate() - 7));
+                        break;
+                    case 'last30days':
+                        endDate = new Date();
+                        startDate = new Date(now.setDate(now.getDate() - 30));
+                        break;
+                    case 'thisMonth':
+                        startDate = new Date(now.getFullYear(), now.getMonth(), 1);
+                        endDate = new Date(now.getFullYear(), now.getMonth() + 1, 0);
+                        break;
+                    case 'lastMonth':
+                        startDate = new Date(now.getFullYear(), now.getMonth() - 1, 1);
+                        endDate = new Date(now.getFullYear(), now.getMonth(), 0);
+                        break;
+                }
+                
+                updateFilterText(startDate, endDate);
+            });
+        });
 
-  <script src="../../assets/vendor/libs/%40algolia/autocomplete-js.js"></script>
+        document.getElementById('applyCustomRange').addEventListener('click', function(e) {
+            e.stopPropagation();
+            const startDate = new Date(document.getElementById('dateFrom').value);
+            const endDate = new Date(document.getElementById('dateTo').value);
+            updateFilterText(startDate, endDate);
+        });
 
-  <script src="../../assets/vendor/libs/pickr/pickr.js"></script>
+        function updateFilterText(startDate, endDate) {
+            const formatDate = date => date.toLocaleDateString('en-US', {
+                month: 'short',
+                day: 'numeric',
+                year: 'numeric'
+            });
+            
+            const filterText = startDate.getTime() === endDate.getTime() ? 
+                formatDate(startDate) : 
+                `${formatDate(startDate)} - ${formatDate(endDate)}`;
+                
+            document.getElementById('selectedDateText').textContent = `: ${filterText}`;
+            
+            // Hide dropdown after selection
+            document.querySelector('.dropdown-menu').classList.remove('show');
+            document.querySelector('.custom-range-inputs').classList.add('d-none');
+        }
+    });
+  </script>
+</div>
 
-  <script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<div class="content-backdrop fade"></div>
+</div>
+<!-- Content wrapper -->
+</div>
+<!-- / Layout page -->
+</div>
 
-  <script src="../../assets/vendor/libs/hammer/hammer.js"></script>
+<!-- Overlay -->
+<div class="layout-overlay layout-menu-toggle"></div>
 
-  <script src="../../assets/vendor/libs/i18n/i18n.js"></script>
+<!-- Drag Target Area To SlideIn Menu On Small Screens -->
+<div class="drag-target"></div>
 
-  <script src="../../assets/vendor/js/menu.js"></script>
+<!-- Core JS -->
+<!-- build:js assets/vendor/js/theme.js -->
 
-  <!-- endbuild -->
+<!-- Footer -->
 
-  <!-- Vendors JS -->
-  <script src="../../assets/vendor/libs/apex-charts/apexcharts.js"></script>
-  <script src="../../assets/vendor/libs/swiper/swiper.js"></script>
-  <script src="../../assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+<!-- / Footer -->
 
-  <!-- Main JS -->
+<script src="../../assets/vendor/libs/jquery/jquery.js"></script>
 
-  <script src="../../assets/js/main.js"></script>
+<script src="../../assets/vendor/libs/popper/popper.js"></script>
+<script src="../../assets/vendor/js/bootstrap.js"></script>
+<script src="../../assets/vendor/libs/node-waves/node-waves.js"></script>
 
-  <!-- Page JS -->
-  <script src="../../assets/vendor/libs/chartjs/chartjs.js"></script>
-  <script src="../../assets/js/charts-chartjs-legend.js"></script>
-  <script src="../../assets/js/charts-chartjs.js"></script>
-  
+<script src="../../assets/vendor/libs/%40algolia/autocomplete-js.js"></script>
+
+<script src="../../assets/vendor/libs/pickr/pickr.js"></script>
+
+<script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+<script src="../../assets/vendor/libs/hammer/hammer.js"></script>
+
+<script src="../../assets/vendor/libs/i18n/i18n.js"></script>
+
+<script src="../../assets/vendor/js/menu.js"></script>
+
+<!-- endbuild -->
+
+<!-- Vendors JS -->
+<script src="../../assets/vendor/libs/apex-charts/apexcharts.js"></script>
+<script src="../../assets/vendor/libs/swiper/swiper.js"></script>
+<script src="../../assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+
+<!-- Main JS -->
+
+<script src="../../assets/js/main.js"></script>
+
+<!-- Page JS -->
+<script src="../../assets/vendor/libs/chartjs/chartjs.js"></script>
+<script src="../../assets/js/charts-chartjs-legend.js"></script>
+<script src="../../assets/js/charts-chartjs.js"></script>
+
 </body>
-
 
 </html>
