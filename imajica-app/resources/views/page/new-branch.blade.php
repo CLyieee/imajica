@@ -344,111 +344,58 @@
                       style="background-color: #0a3622"
                     >
                       <h5 class="card-title mb-sm-0 me-2 text-white">
-                        Supplier Management
+                        Branch Management
                       </h5>
                     </div>
                     <div class="card-body pt-6">
                       <div class="row">
                         <div class="col-lg-8 mx-auto">
+                          <!-- 1. Delivery Address -->
+
                           <div class="row g-6">
                             <div class="col-md-6">
                               <label class="form-label" for="fullname"
-                                >Supplier Name</label
+                                >Branch Code</label
                               >
                               <input
                                 type="text"
                                 id="fullname"
                                 class="form-control"
-                                placeholder="Supplier Name"
+                                placeholder="Branch Code"
                               />
                             </div>
 
                             <div class="col-md-6">
-                              <label class="form-label" for="email"
-                                >Email Address</label
+                              <label class="form-label" for="fullname"
+                                >Branch Name</label
                               >
                               <input
                                 type="text"
-                                id="email"
+                                id="fullname"
                                 class="form-control"
-                                placeholder="Email Address"
+                                placeholder="Branch Name"
                               />
-                            </div>
-
-                            <div class="col-md-6">
-                              <label class="form-label" for="contact"
-                                >Contact Number</label
-                              >
-                              <input
-                                type="text"
-                                id="contact"
-                                class="form-control"
-                                placeholder="Contact Number"
-                              />
-                            </div>
-
-                            <div class="col-md-6">
-                              <label class="form-label">Supplier Type</label>
-                              <input
-                                type="text"
-                                class="form-control"
-                                list="supplierHistory"
-                                id="supplierType"
-                                placeholder="Enter Supplier Type"
-                              />
-                              <datalist id="supplierHistory">
-                                <option value="Product Supplier"></option>
-                                <option value="Service Provider"></option>
-                                <option value="Equipment Supplier"></option>
-                                <option value="Other"></option>
-                              </datalist>
                             </div>
 
                             <div class="col-12">
                               <label class="form-label" for="address"
-                                >Supplier Address</label
+                                >Address</label
                               >
                               <textarea
                                 name="address"
                                 class="form-control"
                                 id="address"
                                 rows="4"
-                                placeholder="Supplier Address"
-                              ></textarea>
-                            </div>
-
-                            <div class="col-12">
-                              <label class="form-label" for="products"
-                                >Products/Services Offered</label
-                              >
-                              <textarea
-                                name="products"
-                                class="form-control"
-                                id="products"
-                                rows="4"
-                                placeholder="List of Products/Services Offered"
-                              ></textarea>
-                            </div>
-
-                            <div class="col-12">
-                              <label class="form-label" for="notes"
-                                >Additional Notes</label
-                              >
-                              <textarea
-                                name="notes"
-                                class="form-control"
-                                id="notes"
-                                rows="4"
-                                placeholder="Additional Notes"
+                                placeholder="Full Address"
                               ></textarea>
                             </div>
                           </div>
 
+                          <!-- 2. Delivery Type -->
+
                           <br />
                           <div class="col-sm-2 col-4 d-grid">
-                            <button class="btn btn-primary">
-                              Add Supplier
-                            </button>
+                            <button class="btn btn-primary">Add Branch</button>
                           </div>
                           <br />
 

@@ -31,3 +31,7 @@ Route::get('/supplier-list', [DashboardController::class, 'supplier_list'])->nam
 Route::get('/new-staff', [DashboardController::class, 'new_staff'])->name('page.new-staff');
 
 Route::get('/staff-list', [DashboardController::class, 'staff_list'])->name('page.staff-list');
+
+Route::get('/new-branch', [DashboardController::class, 'new_branch'])->name('page.new-branch');
+
+Route::get('/branch-list', [DashboardController::class, 'branch_list'])->name('page.branch-list');

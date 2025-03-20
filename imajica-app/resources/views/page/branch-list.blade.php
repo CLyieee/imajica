@@ -76,18 +76,6 @@
       rel="stylesheet"
       href="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css"
     />
-    <link
-      rel="stylesheet"
-      href="../../assets/vendor/libs/flatpickr/flatpickr.css"
-    />
-    <link
-      rel="stylesheet"
-      href="../../assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.css"
-    />
-    <link
-      rel="stylesheet"
-      href="../../assets/vendor/libs/jquery-timepicker/jquery-timepicker.css"
-    />
 
     <!-- endbuild -->
 
@@ -97,6 +85,35 @@
     />
 
     <!-- Page CSS -->
+
+    <!-- endbuild -->
+
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/flatpickr/flatpickr.css"
+    />
+    <!-- Row Group CSS -->
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/datatables-rowgroup-bs5/rowgroup.bootstrap5.css"
+    />
+    <!-- Form Validation -->
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/%40form-validation/form-validation.css"
+    />
 
     <!-- Helpers -->
     <script src="../../assets/vendor/js/helpers.js"></script>
@@ -331,164 +348,99 @@
 
           <!-- / Navbar -->
 
-          <!-- Content wrapper -->
           <div class="content-wrapper">
             <!-- Content -->
             <div class="container-xxl flex-grow-1 container-p-y">
-              <!-- Sticky Actions -->
-              <div class="row">
-                <div class="col-12">
-                  <div class="card">
-                    <div
-                      class="card-header sticky-element d-flex justify-content-sm-between align-items-sm-center flex-column flex-sm-row"
-                      style="background-color: #0a3622"
-                    >
-                      <h5 class="card-title mb-sm-0 me-2 text-white">
-                        Supplier Management
-                      </h5>
-                    </div>
-                    <div class="card-body pt-6">
-                      <div class="row">
-                        <div class="col-lg-8 mx-auto">
-                          <div class="row g-6">
-                            <div class="col-md-6">
-                              <label class="form-label" for="fullname"
-                                >Supplier Name</label
-                              >
-                              <input
-                                type="text"
-                                id="fullname"
-                                class="form-control"
-                                placeholder="Supplier Name"
-                              />
-                            </div>
+              <div class="card">
+                <!-- Branch Filter -->
 
-                            <div class="col-md-6">
-                              <label class="form-label" for="email"
-                                >Email Address</label
-                              >
-                              <input
-                                type="text"
-                                id="email"
-                                class="form-control"
-                                placeholder="Email Address"
-                              />
-                            </div>
+                <!-- Table -->
+                <div class="table-responsive text-nowrap px-3">
+                  <table id="servicesTable" class="table table-striped">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Branch Code</th>
 
-                            <div class="col-md-6">
-                              <label class="form-label" for="contact"
-                                >Contact Number</label
-                              >
-                              <input
-                                type="text"
-                                id="contact"
-                                class="form-control"
-                                placeholder="Contact Number"
-                              />
-                            </div>
+                        <th>Branch Name</th>
+                        <th>Address</th>
+                        <th>Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>BR01</td>
 
-                            <div class="col-md-6">
-                              <label class="form-label">Supplier Type</label>
-                              <input
-                                type="text"
-                                class="form-control"
-                                list="supplierHistory"
-                                id="supplierType"
-                                placeholder="Enter Supplier Type"
-                              />
-                              <datalist id="supplierHistory">
-                                <option value="Product Supplier"></option>
-                                <option value="Service Provider"></option>
-                                <option value="Equipment Supplier"></option>
-                                <option value="Other"></option>
-                              </datalist>
-                            </div>
-
-                            <div class="col-12">
-                              <label class="form-label" for="address"
-                                >Supplier Address</label
-                              >
-                              <textarea
-                                name="address"
-                                class="form-control"
-                                id="address"
-                                rows="4"
-                                placeholder="Supplier Address"
-                              ></textarea>
-                            </div>
-
-                            <div class="col-12">
-                              <label class="form-label" for="products"
-                                >Products/Services Offered</label
-                              >
-                              <textarea
-                                name="products"
-                                class="form-control"
-                                id="products"
-                                rows="4"
-                                placeholder="List of Products/Services Offered"
-                              ></textarea>
-                            </div>
-
-                            <div class="col-12">
-                              <label class="form-label" for="notes"
-                                >Additional Notes</label
-                              >
-                              <textarea
-                                name="notes"
-                                class="form-control"
-                                id="notes"
-                                rows="4"
-                                placeholder="Additional Notes"
-                              ></textarea>
-                            </div>
-                          </div>
-
-                          <br />
-                          <div class="col-sm-2 col-4 d-grid">
-                            <button class="btn btn-primary">
-                              Add Supplier
+                        <td>Pasig City Branch</td>
+                        <td>
+                          <span class="badge bg-label-success"
+                            >2F PLP Building 9544 Raymundo Ave, Caniogan Pasig
+                            City</span
+                          >
+                        </td>
+                        <td>
+                          <div class="d-flex gap-2">
+                            <button class="btn btn-sm btn-info">
+                              Edit
+                            </button>
+                            <button class="btn btn-sm btn-danger">
+                              Delete
                             </button>
                           </div>
-                          <br />
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>BR02</td>
 
-                          <!-- 4. Payment Method -->
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                        <td>Cainta Rizal Branch</td>
+                        <td>
+                          <span class="badge bg-label-success"
+                            >Unit 3, Clean Fuel, Felix Ave., San Isidro, Cainta
+                            Rizal</span
+                          >
+                        </td>
+                        <td>
+                          <div class="d-flex gap-2">
+                            <button class="btn btn-sm btn-info">
+                              Edit
+                            </button>
+                            <button class="btn btn-sm btn-danger">
+                              Delete
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>BR03</td>
+
+                        <td>San Mateo Rizal Branch</td>
+                        <td>
+                          <span class="badge bg-label-success"
+                            >2F RSJ Building 76 Gen Luna St., Ampid 1, San Mateo
+                            Rizal</span
+                          >
+                        </td>
+                        <td>
+                          <div class="d-flex gap-2">
+                            <button class="btn btn-sm btn-info">
+                              Edit
+                            </button>
+                            <button class="btn btn-sm btn-danger">
+                              Delete
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <br />
                 </div>
               </div>
-              <!-- /Sticky Actions -->
             </div>
-            <!-- / Content -->
-
-            <!-- Footer -->
-            <footer class="content-footer footer bg-footer-theme">
-              <div class="container-xxl">
-                <div
-                  class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column"
-                >
-                  <div class="text-body">
-                    ©
-                    <script>
-                      document.write(new Date().getFullYear());
-                    </script>
-                    Developed by
-                    <a
-                      href="https://intra-code.com/"
-                      target="_blank"
-                      class="footer-link"
-                      >Intracode IT Solutions</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </footer>
-            <!-- / Footer -->
-
-            <div class="content-backdrop fade"></div>
           </div>
+
+          <!-- Content wrapper -->
+
           <!-- Content wrapper -->
         </div>
         <!-- / Layout page -->
@@ -529,22 +481,34 @@
     <script src="../../assets/vendor/libs/cleave-zen/cleave-zen.js"></script>
     <script src="../../assets/vendor/libs/select2/select2.js"></script>
 
-    <script src="../../assets/vendor/libs/moment/moment.js"></script>
-    <script src="../../assets/vendor/libs/flatpickr/flatpickr.js"></script>
-    <script src="../../assets/vendor/libs/bootstrap-daterangepicker/bootstrap-daterangepicker.js"></script>
-    <script src="../../assets/vendor/libs/jquery-timepicker/jquery-timepicker.js"></script>
-    <script src="../../assets/vendor/libs/pickr/pickr.js"></script>
-
     <!-- Main JS -->
 
     <script src="../../assets/js/main.js"></script>
 
     <!-- Page JS -->
     <script src="../../assets/js/form-layouts.js"></script>
-    <script src="../../assets/js/forms-pickers.js"></script>
-  </body>
 
-  <!-- Mirrored from demos.pixinvent.com/vuexy-html-admin-template/html/vertical-menu-template/form-layouts-sticky.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 22 Feb 2025 08:27:42 GMT -->
+    <!-- Vendors JS -->
+    <script src="../../assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+    <!-- Flat Picker -->
+    <script src="../../assets/vendor/libs/moment/moment.js"></script>
+    <script src="../../assets/vendor/libs/flatpickr/flatpickr.js"></script>
+    <!-- Form Validation -->
+    <script src="../../assets/vendor/libs/%40form-validation/popular.js"></script>
+    <script src="../../assets/vendor/libs/%40form-validation/bootstrap5.js"></script>
+    <script src="../../assets/vendor/libs/%40form-validation/auto-focus.js"></script>
+    <script>
+      $(document).ready(function () {
+        var table = $("#servicesTable").DataTable();
+
+        // Filter by branch
+        $("#branchFilter").on("change", function () {
+          var selectedBranch = $(this).val();
+          table.column(0).search(selectedBranch).draw();
+        });
+      });
+    </script>
+  </body>
 </html>
 
 <!-- beautify ignore:end -->

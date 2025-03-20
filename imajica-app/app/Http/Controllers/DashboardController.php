@@ -53,5 +53,13 @@ class DashboardController extends Controller
     public function staff_list()
     {
         return view('page.staff-list');
-    }    
+    } 
+    public function new_branch()
+    {
+        return view('page.new-branch');
+    }  
+    public function branch_list()
+    {
+        return view('page.branch-list');
+    }
 }
