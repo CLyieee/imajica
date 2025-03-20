@@ -51,6 +51,7 @@
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
             // Add login logic here
+            
         });
     </script>
 </body>
