@@ -48,4 +48,29 @@ class DashboardController extends Controller
     {
         return view('page.void-logs');
     }
+    public function product_list()
+    {
+        return view('page.product-list');
+    }
+    public function order_list()
+    {
+        return view('page.order-list');
+    }
+    public function order_details()
+    {
+        return view('page.order-details');
+    }
+    public function add_product()
+    {
+        return view('page.add-product');
+    }
+    public function category_list()
+    {
+        return view('page.category-list');
+    }
+    public function system_settings()
+    {
+        return view('page.system-settings');
+    }
 }
+

@@ -106,7 +106,7 @@
           </li>
 
 
-          <li class="menu-item open active">
+          <li class="menu-item ">
       
       <a href="javascript:void(0);" class="menu-link menu-toggle">
         <i class="menu-icon icon-base ti tabler-chart-pie "></i>
@@ -153,13 +153,13 @@
             </a>
             <ul class="menu-sub">
               <li class="menu-item">
-                <a href="new-services.html" class="menu-link">
+                <a href="/new-services" class="menu-link">
                   <div data-i18n="New Services">New Services</div>
                 </a>
               </li>
 
               <li class="menu-item">
-                <a href="services-list.html" class="menu-link">
+                <a href="/services-list" class="menu-link">
                   <div data-i18n="Services List">Services List</div>
                 </a>
               </li>
@@ -179,17 +179,17 @@
             </a>
             <ul class="menu-sub">
               <li class="menu-item">
-                <a href="product-list.html" class="menu-link">
+                <a href="/product-list" class="menu-link">
                   <div data-i18n="Product List">Product List</div>
                 </a>
               </li>
               <li class="menu-item">
-                <a href="app-ecommerce-product-add.html" class="menu-link">
+                <a href="/add-product" class="menu-link">
                   <div data-i18n="Add Product">Add Product</div>
                 </a>
               </li>
               <li class="menu-item">
-                <a href="app-ecommerce-category-list.html" class="menu-link">
+                <a href="/category-list" class="menu-link">
                   <div data-i18n="Category List">Category List</div>
                 </a>
               </li>
@@ -201,12 +201,12 @@
             </a>
             <ul class="menu-sub">
               <li class="menu-item">
-                <a href="order-list.html" class="menu-link">
+                <a href="/order-list" class="menu-link">
                   <div data-i18n="Order List">Order List</div>
                 </a>
               </li>
               <li class="menu-item">
-                <a href="app-ecommerce-order-details.html" class="menu-link">
+                <a href="/order-details" class="menu-link">
                   <div data-i18n="Order Details">Order Details</div>
                 </a>
               </li>

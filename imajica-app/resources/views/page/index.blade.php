@@ -47,8 +47,8 @@
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            // Add login logic here
-            
+            // Redirect to the dashboard
+            window.location.href = '/dashboard'; // Update this path as necessary
         });
     </script>
 </body>

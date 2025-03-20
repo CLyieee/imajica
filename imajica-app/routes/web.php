@@ -30,3 +30,17 @@ use App\Http\Controllers\DashboardController;
 
               
             Route::get('/void-logs', [DashboardController::class, 'void_logs'])->name('page.void-logs');
+
+            Route::get('/product-list', [DashboardController::class, 'product_list'])->name('page.product-list');
+
+            Route::get('/order-list', [DashboardController::class, 'order_list'])->name('page.order-list');
+
+            
+            Route::get('/order-details', [DashboardController::class, 'order_details'])->name('page.order-details');
+ 
+            Route::get('/add-product', [DashboardController::class, 'add_product'])->name('page.add-product');
+
+            
+            Route::get('/category-list', [DashboardController::class, 'category_list'])->name('page.category-list');
+
+            Route::get('/system-settings', [DashboardController::class, 'system_settings'])->name('page.system-settings');
