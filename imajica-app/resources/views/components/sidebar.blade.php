@@ -99,7 +99,7 @@
           </li>
 
           <li class="menu-item">
-            <a href="booking.html" class="menu-link">
+            <a href="/booking" class="menu-link">
               <i class="menu-icon icon-base ti tabler-calendar"></i>
               <div data-i18n="Booking">Booking</div>
             </a>

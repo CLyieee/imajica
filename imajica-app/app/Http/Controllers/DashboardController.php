@@ -141,6 +141,11 @@ class DashboardController extends Controller
     {
         return view('page.user-list');
     }
+    public function booking()
+    {
+        return view('page.booking');
+    }
+
 
 }
 

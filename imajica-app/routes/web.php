@@ -74,5 +74,6 @@ Route::get('/new-user', [DashboardController::class, 'new_user'])->name('page.ne
 
 Route::get('/user-list', [DashboardController::class, 'user_list'])->name('page.user-list');
 
+Route::get('/booking', [DashboardController::class, 'booking'])->name('page.booking');
 
 
