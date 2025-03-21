@@ -495,8 +495,9 @@
     <script src="../../assets/vendor/libs/flatpickr/flatpickr.js"></script>
     <!-- Form Validation -->
     <script src="../../assets/vendor/libs/%40form-validation/popular.js"></script>
-    <script src="../../assets/vendor/libs/%40form-validation/bootstrap5.js"></script>
+    <script src="../../assets/vendor/libs/%40form-validation/bootstrap5.js"></script> 
     <script src="../../assets/vendor/libs/%40form-validation/auto-focus.js"></script>
+    
     <script>
       $(document).ready(function () {
         var table = $("#servicesTable").DataTable();

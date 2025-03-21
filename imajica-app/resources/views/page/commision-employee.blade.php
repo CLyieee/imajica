@@ -665,11 +665,11 @@
       
     </div>
       
-
-
         <div class="container">
-            <table class="table">
-                <thead>
+
+        <table class=" table table-striped" id="servicesTable" >
+        <thead class="table-light">
+
                     <tr>
                         <th>   Employee Name</th>
                         <th>   No.of Service Sales</th>
@@ -749,8 +749,42 @@ function searchCommission() {
 </script>
           <!-- / Content -->
 
-          
-            
+ 
+<script>
+    $(document).ready(function () {
+        var table = $("#servicesTable").DataTable({
+            ajax: {
+                url: '/assets/comissions.json', // Adjusted relative path to your JSON
+                dataSrc: '' // Assuming the JSON is an array of objects
+            },
+            columns: [
+                { data: 'employee_name' },
+                { data: 'sales_service_no' },
+                { data: 'product_sales_no' },
+                { data: 'client_no' },
+                { data: 'total_service_sale' },
+                { data: 'total_service_sale' },
+                { data: 'total_product_sale' },
+                { data: 'total_session_commission' },
+                { data: 'total_service_commission' },
+                { data: 'total_product_commission' },
+                { data: 'total_commision' },
+                {
+                    data: null,
+                    render: function (data, type, row) {
+                        return `<div class='d-flex gap-2'>
+                                    <button class='btn btn-success'>View</button>
+                                    <button class='btn btn-info'>Edit</button>
+                                    <button class='btn btn-danger'>Delete</button>
+                                </div>`;
+                    }
+                }
+            ]
+        });
+    });
+</script>
+
+
 
 <!-- Footer -->
 <footer class="content-footer footer bg-footer-theme">
@@ -835,8 +869,34 @@ function searchCommission() {
     
 
     <!-- Page JS -->
-  <script src="../../assets/js/commision.js"></script>
+  <script src="../../assets/js/commission.js"></script>
   <script src="../../assets/comissions.json"></script>
+
+  <script src="../../assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+
+
+  <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/flatpickr/flatpickr.css"
+    />
+    <!-- Row Group CSS -->
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/datatables-rowgroup-bs5/rowgroup.bootstrap5.css"
+    />
+
   </body>
 
 <!-- Mirrored from demos.pixinvent.com/vuexy-html-admin-template/html/vertical-menu-template/app-invoice-preview.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 22 Feb 2025 08:26:33 GMT -->

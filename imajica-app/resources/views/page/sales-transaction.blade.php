@@ -620,64 +620,11 @@
                         
               
 
-          <div class="d-flex mb-3 " style="width: 70%; "> 
-            <div class="input-group ms-2 me-6">
-              <select id="filterCategory" class="form-select" onchange="filterByCategory()">
-                  <option value="">Filter by Category</option>
-                  <option value="Per Transaction">Per Transaction</option>
-                  <option value="Per Item">Per Item</option>
-              </select>
-          </div>
-            <div class="input-group me-9 " style="width: 150%;"> 
-                <span class="input-group-text" id="search-addon">
-                    <i class="icon-base ti tabler-search"></i>
-                </span>
-                <input type="text" id="searchInput" placeholder="Search for Service,Customer,Payment Terms" class="form-control" onkeyup="searchTransactions()">
-            </div>
-        
-            <div class="d-flex justify-content-end me-auto">
-           
-              <div class="d-flex justify-content-end align-items-center gap-2 me-9 ">
-                <!-- Filter Label -->
-              
-                <label for="dateInput" class="fw-bold" style="white-space: nowrap;">Filter by date:</label>
-    
-                
-                <!-- Date Filter Dropdown -->
-                <select id="dateFilter" class="form-select w-auto" onchange="filterByDatee()"> <!-- Added onchange event -->
-                  <option value="Today">Today</option>
-                  <option value="Yesterday">Yesterday</option>
-                  <option value="Last 7 Days">Last 7 Days</option>
-                  <option value="Last 30 Days">Last 30 Days</option>
-                  <option value="This Month">This Month</option>
-                  <option value="Last Month">Last Month</option>
-                  <option value="Custom Range">Custom Range</option>
-              </select>
-              <button id="exportButton" class="btn btn-primary ms-2 " onclick="exportData()">Export  <i class="ti tabler-chevron-right "></i> </button>
-                <!-- Date Input Group -->
-              
-            </div>
-            
-            <!-- Custom Range Date Inputs (Initially Hidden) -->
-            <div id="customDateInputs" class="mt-2 d-none">
-                <input type="date" id="startDate" class="form-control mb-2">
-                <input type="date" id="endDate" class="form-control">
-            </div>
-            
-    
-    <!-- Date input for Custom Range (initially hidden) -->
-    <div id="customDateInputs" style="display: none; margin-top: 10px;">
-    <input type="date" id="startDate" class="form-control mb-2">
-    <input type="date" id="endDate" class="form-control">
-    </div>
-    
-          </div>
-          
-        </div>
+          <!--  -->
               
             <div class="container">
-                <table class="table" id="salesTable">
-                    <thead>
+                <table class=" table table-striped" id="servicesTable" >
+                    <thead class="table-light">
                         <tr>
                             <th>Reciept No.</th>
                             <th>Customer Name</th>
@@ -691,7 +638,7 @@
                         </tr>
                     </thead>
                     <tbody id="salesTableBody">
-                        <!-- Sales data will be populated here -->
+                        
                     </tbody>
                 </table>
             </div>
@@ -765,7 +712,8 @@
       <script src="../../assets/vendor/libs/pickr/pickr.js"></script>
     
 
-    
+      <script src="../../assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+      
       <script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
       
         
@@ -854,37 +802,63 @@
     }
   </script>
 
- 
-  <!-- Add Fetching Functionality for Sales -->
-  <script>
-    // Fetch JSON data and populate the table
-    fetch('/assets/sales-transaction.json') // Adjusted relative path
-        .then(response => response.json())
-        .then(data => {
-            const tableBody = document.getElementById('salesTableBody');
-            data.forEach(item => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                     <td>${item.transaction_id}</td>
-                <td>${item.client_name}</td>
-                <td>${item.service_product}</td>
-                <td>${item.payment_terms_amount}</td>
-                <td>${item.customer}</td>
-                <td>${item.cashier}</td>
-                <td>${item.amount.toFixed(2)}</td>
-                <td>${item.transaction_date}</td>
-                <td>
 
-                   <div class='d-flex gap-2'><button class='btn btn-primary'>View</button><button class='btn btn-danger'>Edit</button><button class='btn btn-primary'>Delete</button></div>
-                   
-                </td>
-                `;
-                tableBody.appendChild(row);
-            });
-        })
-        .catch(error => console.error('Error fetching the JSON data:', error));
+
+<script>
+      $(document).ready(function () {
+        var table = $("#servicesTable").DataTable({
+            ajax: {
+                url: '/assets/sales-transaction.json', // Adjusted relative path to your JSON
+                dataSrc: '' // Assuming the JSON is an array of objects
+            },
+            columns: [
+                { data: 'transaction_id' },
+                { data: 'client_name' },
+                { data: 'service_product' },
+                { data: 'payment_terms_amount' },
+                { data: 'customer' },
+                { data: 'cashier' },
+                { data: 'amount' },
+                { data: 'transaction_date' },
+                {
+                    data: null,
+                    render: function (data, type, row) {
+                        return `<div class='d-flex gap-2'>
+                                    <button class='btn btn-success'>View</button>
+                                    <button class='btn btn-info'>Edit</button>
+                                    <button class='btn btn-danger'>Delete</button>
+                                </div>`;
+                    }
+                }
+            ]
+        });
+    });
 </script>
  
+
+
+
+<link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/flatpickr/flatpickr.css"
+    />
+    <!-- Row Group CSS -->
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/datatables-rowgroup-bs5/rowgroup.bootstrap5.css"
+/>
   </body>
 
 <!-- Mirrored from demos.pixinvent.com/vuexy-html-admin-template/html/vertical-menu-template/app-invoice-preview.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 22 Feb 2025 08:26:33 GMT -->

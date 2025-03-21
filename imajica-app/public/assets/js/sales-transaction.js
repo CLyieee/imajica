@@ -70,9 +70,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 <td>${item.amount.toFixed(2)}</td>
                 <td>${item.transaction_date}</td>
                 <td>
-                    <button class="btn btn-primary">View</button>
-                    <button class="btn btn-danger">Edit</button>
-                    <button class="btn btn-danger">Delete</button>
+                    <div class='d-flex gap-2'>
+                        <button class='btn btn-primary'>View</button>
+                        <button class='btn btn-danger'>Edit</button>
+                        <button class='btn btn-danger'>Delete</button>
+                        <button class='btn btn-success'>New Button</button>
+                    </div>
                 </td>
             </tr>`;
     }

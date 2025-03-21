@@ -669,7 +669,7 @@
         
       </div>
 
-        <table class="employee-sales table">
+        <table id="servicesTable" class="employee-sales table">
           <thead>
             <tr>
               <th>Employee Name</th>
@@ -781,6 +781,21 @@
   <script src="../../assets/js/employee-sales.js"></script>
  
  
+  </script>
+          <!-- / Content -->
+
+          <script>
+      $(document).ready(function () {
+        var table = $("#servicesTable").DataTable();
+
+        // Filter by branch
+        $("#branchFilter").on("change", function () {
+          var selectedBranch = $(this).val();
+          table.column(0).search(selectedBranch).draw();
+        });
+      });
+    </script>
+
   <script>
     // Fetch JSON data and populate the table
     fetch('/assets/employee-sales.json') // Use relative path
