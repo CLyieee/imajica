@@ -495,30 +495,28 @@
               <div class="modal-content border-0">
                 <div class="modal-header bg-primary text-white border-0">
                   <h5 class="modal-title text-white fs-4">
-                    <i class="ti tabler-plus me-2"></i>
+                    <i class="ti tabler-info-circle me-2"></i>
                     <span id="modalServiceName"></span>
                   </h5>
                   <button
-                    type="button"
+                    type="button" 
                     class="btn-close btn-close-white"
                     data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
+                    aria-label="Close">
+                  </button>
                 </div>
                 <div class="modal-body p-4">
                   <div class="row g-3">
                     <!-- Service Details -->
                     <div class="col-md-6">
                       <div class="client-detail-card h-100">
-                        <h6 class="text-primary mb-3">Service Information</h6>
+                        <h6 class="text-primary mb-3">Service Details</h6>
                         <div class="client-info-item">
                           <div class="client-info-icon">
-                            <i class="ti tabler-tag"></i>
+                            <i class="ti tabler-currency-peso"></i>
                           </div>
                           <div>
-                            <small class="text-muted d-block"
-                              >Service Cost</small
-                            >
+                            <small class="text-muted d-block">Service Cost</small>
                             <span id="modalCost" class="fw-semibold"></span>
                           </div>
                         </div>
