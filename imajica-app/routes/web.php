@@ -66,3 +66,14 @@ Route::get('/new-branch', [DashboardController::class, 'new_branch'])->name('pag
 
 Route::get('/branch-list', [DashboardController::class, 'branch_list'])->name('page.branch-list');
 
+Route::get('/new-services', [DashboardController::class, 'new_services'])->name('page.new-services');
+
+Route::get('/services-list', [DashboardController::class, 'services_list'])->name('page.services-list');
+
+Route::get('/new-user', [DashboardController::class, 'new_user'])->name('page.new-user');
+
+Route::get('/user-list', [DashboardController::class, 'user_list'])->name('page.user-list');
+
+Route::get('/booking', [DashboardController::class, 'booking'])->name('page.booking');
+
+
