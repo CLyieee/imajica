@@ -564,133 +564,108 @@
       </style>
 
 <!-- / Navbar -->
+<div class="content-wrapper">
+  <!-- Content -->
+  <div class="container flex-grow-1 container-p-y">
+    <div class="row">
+      <div class="col-20">
+        <!-- New Section: Commission for Employee -->
+        <h4 class="fw-bold py-3 mb-4">Commission for Employees</h4>
 
-
-        <!-- Content wrapper -->
-        <div class="content-wrapper">
-          <!-- Content -->
-          <div class="container-xxl flex-grow-1 container-p-y">
-<!-- New Section: Commission for Employee -->
-<h4 class="fw-bold py-3 mb-4">Commission for Employees</h4>
-
-<div class="card mb-4">
-  <div class="card-body">
-      <div class="row">
-          <div class="col-md-4">
-              <div class="card card-custom card-total-sales">
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card card-custom card-total-sales">
                   <div class="card-body d-flex justify-content-between align-items-center">
-                      <div>
-                          <p class="card-text"><strong>Total Sales:</strong></p>
-                          <h4 class="text-black">₱3,178,492.00</h4>
-                      </div>
-                      <i class="icon-base ti tabler-chart-pie icon-lg"></i>
+                    <div>
+                      <p class="card-text"><strong>Total Sales:</strong></p>
+                      <h4 class="text-black">₱3,178,492.00</h4>
+                    </div>
+                    <i class="icon-base ti tabler-chart-pie icon-lg"></i>
                   </div>
+                </div>
               </div>
-          </div>
 
-          <div class="col-md-4">
-              <div class="card card-custom card-monthly-commissions">
+              <div class="col-md-4">
+                <div class="card card-custom card-monthly-commissions">
                   <div class="card-body d-flex justify-content-between align-items-center">
-                      <div>
-                          <p class="card-text"><strong>Monthly Commissions</strong></p>
-                          <h4 class="text-black">₱4,850.50</h4>
-                      </div>
-                      <i class="icon-base ti tabler-calendar icon-lg"></i>
+                    <div>
+                      <p class="card-text"><strong>Monthly Commissions</strong></p>
+                      <h4 class="text-black">₱4,850.50</h4>
+                    </div>
+                    <i class="icon-base ti tabler-calendar icon-lg"></i>
                   </div>
+                </div>
               </div>
-          </div>
-          
-          <div class="col-md-4">
-              <div class="card card-custom card-total-commissions">
+
+              <div class="col-md-4">
+                <div class="card card-custom card-total-commissions">
                   <div class="card-body d-flex justify-content-between align-items-center">
-                      <div>
-                          <p class="card-text"><strong>Total Commissions</strong></p>
-                          <h4 class="text-black">₱89,685.00</h4>
-                      </div>
-                      <i class="icon-base ti tabler-currency-dollar icon-lg"></i>
+                    <div>
+                      <p class="card-text"><strong>Total Commissions</strong></p>
+                      <h4 class="text-black">₱89,685.00</h4>
+                    </div>
+                    <i class="icon-base ti tabler-currency-dollar icon-lg"></i>
                   </div>
+                </div>
               </div>
+            </div>
           </div>
+        </div>
+
+        <!-- Table Section -->
+        <div class="card">
+          <div class="card-body">
+            <div class="container">
+              <div class="table-responsive">
+                <table id="servicesTable" class="table table-striped">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Employee Name</th>
+                      <th>No. of Service Sales</th>
+                      <th>No. of Product Sales</th>
+                      <th>No. of Clients</th>
+                      <th>Total Service Sales</th>
+                      <th>Total Product Sales</th>
+                      <th>Total Service Commission</th>
+                      <th>Total Session Commission</th>
+                      <th>Total Product Commission</th>
+                      <th>Total Commission</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="commissionTableBody">
+                    <!-- Dynamic data will be inserted here -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
+    </div>
   </div>
 </div>
 
-<div class="card">
-    <div class="card-body">
-      <div class="d-flex mb-3 " style="width: 60%; "> <!-- Flex container for side-by-side layout -->
-        <div class="input-group me-9 width:100%;"> <!-- Search input group with increased margin -->
-            <span class="input-group-text" id="search-addon">
-                <i class="icon-base ti tabler-search"></i>
-            </span>
-            <input type="text" id="searchInput" placeholder="Search for Employee Name" class="form-control" onkeyup="searchCommission()">
-        </div>
-    
-        <div class="d-flex justify-content-end me-auto">
-       
-          <div class="d-flex justify-content-end align-items-center gap-2 me-9 ">
-            <!-- Filter Label -->
-          
-            <label for="dateInput" class="fw-bold" style="white-space: nowrap;">Filter by date:</label>
+<!-- Optional CSS Fix for Table Layout -->
+<style>
+  #servicesTable {
+    table-layout: fixed;
+    width: 100%;
+  }
+  th, td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+  }
+  .table-responsive {
+    overflow-x: auto;
+  }
+</style>
 
-            
-            <!-- Date Filter Dropdown -->
-            <select id="dateFilter" class="form-select w-auto" onchange="filterByDatee()"> <!-- Added onchange event -->
-              <option value="Today">Today</option>
-              <option value="Yesterday">Yesterday</option>
-              <option value="Last 7 Days">Last 7 Days</option>
-              <option value="Last 30 Days">Last 30 Days</option>
-              <option value="This Month">This Month</option>
-              <option value="Last Month">Last Month</option>
-              <option value="Custom Range">Custom Range</option>
-          </select>
-          <button id="exportButton" class="btn btn-primary ms-2 " onclick="exportData()">Export  <i class="ti tabler-chevron-right "></i> </button>
-            <!-- Date Input Group -->
-          
-        </div>
-        
-        <!-- Custom Range Date Inputs (Initially Hidden) -->
-        <div id="customDateInputs" class="mt-2 d-none">
-            <input type="date" id="startDate" class="form-control mb-2">
-            <input type="date" id="endDate" class="form-control">
-        </div>
-        
-
-<!-- Date input for Custom Range (initially hidden) -->
-<div id="customDateInputs" style="display: none; margin-top: 10px;">
-<input type="date" id="startDate" class="form-control mb-2">
-<input type="date" id="endDate" class="form-control">
-</div>
-
-      </div>
-      
-    </div>
-      
-
-
-        <div class="container">
-            <table class="table" id="servicesTable">
-                <thead>
-                    <tr>
-                        <th>   Employee Name</th>
-                        <th>   No.of Service Sales</th>
-                        <th>No. of Prodcut Sales</th>
-                        <th>No. of Clients</th>
-                        <th>Total Service Sales</th>
-                        <th>Total Product Sales</th>
-                        <th>Total Service Commision</th>
-                        <th>Total Session Commision</th>
-                        <th>Total Product Commision</th>
-                        <th>Total Commision</th>
-                        <th class="align-items-center"> Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="commissionTableBody">
-               
-                </tbody>
-            </table>
-        </div>
-    </div>
-</div>
 <!-- End of Commission for Employee -->
 
 <!-- Add Search Functionality -->
@@ -719,47 +694,11 @@ function searchCommission() {
 
 </script>
 
-<script>
-    // Fetch JSON data and populate the table
-    fetch('/assets/comissions.json')
-    .then(response => response.json())
-    .then(data => {
-        const tableBody = document.getElementById('commissionTableBody');
-        data.forEach(item => {
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${item.employee_name}</td>
-                <td>${item.sales_service_no}</td>
-                <td>${item.product_sales_no}</td>
-                <td>${item.client_no}</td>
-                <td>${item.total_service_sale}</td>
-                <td>${item.total_product_sale}</td>
-                <td>${item.total_service_commission}</td>
-                <td>${item.total_session_commission}</td>
-                <td>${item.total_product_commission}</td>
-                <td>${item.total_commision}</td>
-                <td>
-                     <div class='d-flex gap-2'><button class='btn btn-primary'>View</button><button class='btn btn-danger'>Edit</button><button class='btn btn-primary'>Delete</button></div>
-                   
-                </td>
-            `;
-            tableBody.appendChild(row);
-        });
 
-        // Initialize DataTable after populating data
-        $('#servicesTable').DataTable({
-            responsive: true,
-            dom: '<"row"<"col-sm-12 col-md-6"l><"col-sm-12 col-md-6"f>>' +
-                 '<"row"<"col-sm-12"tr>>' +
-                 '<"row"<"col-sm-12 col-md-5"i><"col-sm-12 col-md-7"p>>',
-            language: {
-                search: "",
-                searchPlaceholder: "Search records"
-            }
-        });
-    })
-    .catch(error => console.error('Error fetching the JSON data:', error));
-</script>
+
+
+
+
           <!-- / Content -->
 
           
@@ -809,8 +748,9 @@ function searchCommission() {
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/theme.js -->
     
-    
-      <script src="../../assets/vendor/libs/jquery/jquery.js"></script>
+      
+      
+    <script src="../../assets/vendor/libs/jquery/jquery.js"></script>
     
     <script src="../../assets/vendor/libs/popper/popper.js"></script>
     <script src="../../assets/vendor/js/bootstrap.js"></script>
@@ -819,11 +759,11 @@ function searchCommission() {
     
     <script src="../../assets/vendor/libs/%40algolia/autocomplete-js.js"></script>
 
-    <script src="../../assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
+    
       
       <script src="../../assets/vendor/libs/pickr/pickr.js"></script>
     
-
+      <script src="../../assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
     
       <script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
       
@@ -851,17 +791,43 @@ function searchCommission() {
   <script src="../../assets/js/commision.js"></script>
   <script src="../../assets/comissions.json"></script>
 
-  <script>
-      $(document).ready(function () {
-        var table = $("#servicesTable").DataTable();
 
-        // Filter by branch
-        $("#branchFilter").on("change", function () {
-          var selectedBranch = $(this).val();
-          table.column(0).search(selectedBranch).draw();
-        });
-      });
-    </script>
+
+  <script>
+
+$(document).ready(function () {
+    var table = $("#servicesTable").DataTable({
+        ajax: {
+            url: '/assets/comissions.json',
+            dataSrc:''
+        },
+        columns: [
+            { data: 'employee_name' },
+            { data: 'sales_service_no' },
+            { data: 'product_sales_no' },
+            { data: 'client_no' }, 
+            { data: 'total_service_sale' },
+            { data: 'total_product_sale' },
+            { data: 'total_service_commission' },
+            { data: 'total_session_commission' },
+            { data: 'total_product_commission' },
+            { data: 'total_commision' },
+            {
+                data: null,
+                render: function (data, type, row) {
+                    return `<div class='d-flex gap-2'>
+                                <button class='btn btn-success btn-sm'>View</button>
+                                <button class='btn btn-info btn-sm'>Edit</button>
+                                <button class='btn btn-danger btn-sm'>Delete</button>
+                            </div>`;
+                }
+            }
+        ]
+    });
+});
+</script>
+
+
 
   </body>
 

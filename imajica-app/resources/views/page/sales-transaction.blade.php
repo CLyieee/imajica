@@ -569,79 +569,83 @@
         </style>
 
         <!-- Content wrapper -->
-        <div class="content-wrapper">
+ <div class="content-wrapper">
           <!-- Content -->
-          <div class="container-xxl flex-grow-1 container-p-y">
-  <div class="row">
-    <div class="col-12">
-      <h4 class="fw-bold py-3 mb-4">Sales Transactions</h4>
+    <div class="container-xxl flex-grow-1 container-p-y">
+          <div class="row">
+              <div class="col-12">
+                <h4 class="fw-bold py-3 mb-4">Sales Transactions</h4>
 
-      <div class="card mb-3">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="card card-custom card-total-sales">
-                        <div class="card-body">
-                            <p class="card-text"><strong>Total Sales:</strong></p>
-                            <h4 class="text-black">₱5,071,472.50</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card card-custom card-product-sales">
-                        <div class="card-body">
-                            <p class="card-text"><strong>Product Sales:</strong></p>
-                            <h4 class="text-black">₱1,070,500.00</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card card-custom card-services-sales">
-                        <div class="card-body">
-                            <p class="card-text"><strong>Services Sales:</strong></p>
-                            <h4 class="text-black">₱4,000,972.50</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="card card-custom card-top-selling">
-                        <div class="card-body">
-                            <p class="card-text"><strong>Top Selling Product:</strong></p>
-                            <h5 class="text-black">Niacinamide serum/IMAJICA AQUA</h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-      <div class="card">
-        <div class="card-body">
-                        
+                <div class="card mb-3">
+                  <div class="card-body">
+                      <div class="row">
+                          <div class="col-md-3">
+                              <div class="card card-custom card-total-sales">
+                                  <div class="card-body">
+                                      <p class="card-text"><strong>Total Sales:</strong></p>
+                                      <h4 class="text-black">₱5,071,472.50</h4>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-3">
+                              <div class="card card-custom card-product-sales">
+                                  <div class="card-body">
+                                      <p class="card-text"><strong>Product Sales:</strong></p>
+                                      <h4 class="text-black">₱1,070,500.00</h4>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-3">
+                              <div class="card card-custom card-services-sales">
+                                  <div class="card-body">
+                                      <p class="card-text"><strong>Services Sales:</strong></p>
+                                      <h4 class="text-black">₱4,000,972.50</h4>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-3">
+                              <div class="card card-custom card-top-selling">
+                                  <div class="card-body">
+                                      <p class="card-text"><strong>Top Selling Product:</strong></p>
+                                      <h5 class="text-black">Niacinamide serum/IMAJICA AQUA</h5>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
               
-            <div class="container">
-                <table class="table" id="servicesTable">
-                    <thead>
-                        <tr>
-                            <th>Reciept No.</th>
-                            <th>Customer Name</th>
-                            <th>Service/Product</th>
-                            <th>Payment Terms Amount</th>
-                            <th>Customer</th>
-                            <th>Cashier</th>
-                            <th>Amount</th>
-                            <th>Date</th>
-                          <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="salesTableBody">
-                        <!-- Sales data will be populated here -->
-                    </tbody>
-                </table>
-            </div>
-          </div>
-        </div>
-      </div>
+
+
+                <div class="card">
+                  <div class="card-body">
+                                  
+                        
+                        <div class="table-responsive container">
+                            <table id="servicesTable" class="table table-striped">
+                              <thead class="table-light">
+                                  <tr>
+                                      <th>Reciept No.</th>
+                                      <th>Customer Name</th>
+                                      <th>Service/Product</th>
+                                      <th>Payment Terms Amount</th>
+                                      <th>Customer</th>
+                                      <th>Cashier</th>
+                                      <th>Amount</th>
+                                      <th>Date</th>
+                                    <th>Action</th>
+                                  </tr>
+                              </thead>
+                              <tbody id="salesTableBody">
+                                  <!-- Sales data will be populated here -->
+                              </tbody>
+                          </table>
+                      </div>
+                    </div>
+                    </div>
+                </div>
+                
+
     </div>
   </div>
 </div>
@@ -693,8 +697,8 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/theme.js -->
-    
-    
+      
+      
       <script src="../../assets/vendor/libs/jquery/jquery.js"></script>
     
     <script src="../../assets/vendor/libs/popper/popper.js"></script>
@@ -734,112 +738,42 @@
 
     <!-- Page JS -->
   <script src="../../assets/js/sales-transaction.js"></script>
+
   
  
-  <script>
-    function filterByDatee() {
-        const filterDate = document.getElementById('dateFilter').value; // Get the selected filter value
-        const startDate = document.getElementById('startDate').value; // Get the start date for custom range
-        const endDate = document.getElementById('endDate').value; // Get the end date for custom range
-        const table = document.getElementById('salesTable');
-        const tr = table.getElementsByTagName('tr');
-    
-        for (let i = 1; i < tr.length; i++) {
-            const td = tr[i].getElementsByTagName('td');
-            const transactionDate = new Date(td[7].textContent); // Assuming the date is in the 8th column
-            let displayRow = false;
-    
-            if (filterDate === "Custom Range") {
-                const start = new Date(startDate);
-                const end = new Date(endDate);
-                displayRow = transactionDate >= start && transactionDate <= end; // Check if date is within the range
-            } else {
-                const today = new Date();
-                if (filterDate === "Today") {
-                    displayRow = transactionDate.toDateString() === today.toDateString();
-                } else if (filterDate === "Yesterday") {
-                    const yesterday = new Date();
-                    yesterday.setDate(today.getDate() - 1);
-                    displayRow = transactionDate.toDateString() === yesterday.toDateString();
-                } else if (filterDate === "Last 7 Days") {
-                    const last7Days = new Date();
-                    last7Days.setDate(today.getDate() - 7);
-                    displayRow = transactionDate >= last7Days && transactionDate <= today;
-                } else if (filterDate === "Last 30 Days") {
-                    const last30Days = new Date();
-                    last30Days.setDate(today.getDate() - 30);
-                    displayRow = transactionDate >= last30Days && transactionDate <= today;
-                } else if (filterDate === "This Month") {
-                    displayRow = transactionDate.getMonth() === today.getMonth() && transactionDate.getFullYear() === today.getFullYear();
-                } else if (filterDate === "Last Month") {
-                    const lastMonth = new Date();
-                    lastMonth.setMonth(today.getMonth() - 1);
-                    displayRow = transactionDate.getMonth() === lastMonth.getMonth() && transactionDate.getFullYear() === lastMonth.getFullYear();
-                }
-            }
-    
-            tr[i].style.display = displayRow ? "" : "none"; // Show or hide the row based on the filter
-        }
-    }
-    </script>
+
 
   <script>
-    function filterByDate() {
-      const input = document.getElementById('dateFilter');
-      const filterDate = input.value;
-      const table = document.getElementById('salesTable');
-      const tr = table.getElementsByTagName('tr');
-  
-      for (let i = 1; i < tr.length; i++) {
-        const td = tr[i].getElementsByTagName('td');
-        const transactionDate = td[7].textContent; // Assuming the date is in the 8th column
-        tr[i].style.display = transactionDate === filterDate || filterDate === "" ? "" : "none";
-      }
-    }
-  </script>
-
- 
-  <!-- Add Fetching Functionality for Sales -->
-  <script>
-    // Fetch JSON data and populate the table
-    fetch('/assets/sales-transaction.json') // Adjusted relative path
-        .then(response => response.json())
-        .then(data => {
-            const tableBody = document.getElementById('salesTableBody');
-            data.forEach(item => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                     <td>${item.transaction_id}</td>
-                <td>${item.client_name}</td>
-                <td>${item.service_product}</td>
-                <td>${item.payment_terms_amount}</td>
-                <td>${item.customer}</td>
-                <td>${item.cashier}</td>
-                <td>${item.amount.toFixed(2)}</td>
-                <td>${item.transaction_date}</td>
-                <td>
-
-                   <div class='d-flex gap-2'><button class='btn btn-primary'>View</button><button class='btn btn-danger'>Edit</button><button class='btn btn-primary'>Delete</button></div>
-                   
-                </td>
-                `;
-                tableBody.appendChild(row);
-            });
-        })
-        .catch(error => console.error('Error fetching the JSON data:', error));
-</script>
-
-<script>
       $(document).ready(function () {
-        var table = $("#servicesTable").DataTable();
-
-        // Filter by branch
-        $("#branchFilter").on("change", function () {
-          var selectedBranch = $(this).val();
-          table.column(0).search(selectedBranch).draw();
+        var table = $("#servicesTable").DataTable({
+            ajax: {
+                url: '/assets/sales-transaction.json', // Adjusted relative path to your JSON
+                dataSrc: '' // Assuming the JSON is an array of objects
+            },
+            columns: [
+                { data: 'transaction_id' },
+                { data: 'client_name' },
+                { data: 'service_product' },
+                { data: 'payment_terms_amount' },
+                { data: 'customer' },
+                { data: 'cashier' },
+                { data: 'amount' },
+                { data: 'transaction_date' },
+                {
+                    data: null,
+                    render: function (data, type, row) {
+                        return `<div class='d-flex gap-2'>
+                                    <button class='btn btn-success'>View</button>
+                                    <button class='btn btn-info'>Edit</button>
+                                    <button class='btn btn-danger'>Delete</button>
+                                </div>`;
+                    }
+                }
+            ]
         });
-      });
-    </script>
+    });
+</script>
+ 
 
 
 <link
@@ -870,28 +804,4 @@
 </html>
 
   <!-- beautify ignore:end -->
-
-<script>
-  function searchTransactions() {
-    const input = document.getElementById('searchInput');
-    const filter = input.value.toLowerCase();
-    const table = document.getElementById('salesTable');
-    const tr = table.getElementsByTagName('tr');
-
-    for (let i = 1; i < tr.length; i++) {
-      const td = tr[i].getElementsByTagName('td');
-      let found = false;
-      for (let j = 0; j < td.length; j++) {
-        if (td[j]) {
-          const txtValue = td[j].textContent || td[j].innerText;
-          if (txtValue.toLowerCase().indexOf(filter) > -1) {
-            found = true;
-            break;
-          }
-        }
-      }
-      tr[i].style.display = found ? "" : "none";
-    }
-  }
-</script>
 

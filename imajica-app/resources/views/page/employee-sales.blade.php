@@ -621,65 +621,20 @@
     <div class="card">
       <div class="card-body">
 
-        <div class="d-flex mb-3 " style="width: 60%; "> <!-- Flex container for side-by-side layout -->
-          <div class="input-group me-9 width:100%;"> <!-- Search input group with increased margin -->
-              <span class="input-group-text" id="search-addon">
-                  <i class="icon-base ti tabler-search"></i>
-              </span>
-              <input type="text" id="searchInput" placeholder="Search for names" class="form-control" onkeyup="searchEmployee()">
-          </div>
-      
-          <div class="d-flex justify-content-end me-auto">
-         
-            <div class="d-flex justify-content-end align-items-center gap-2 me-9 ">
-              <!-- Filter Label -->
-            
-              <label for="dateInput" class="fw-bold" style="white-space: nowrap;">Filter by date:</label>
+       
   
-              
-              <!-- Date Filter Dropdown -->
-              <select id="dateFilter" class="form-select w-auto" onchange="filterByDatee()"> <!-- Added onchange event -->
-                <option value="Today">Today</option>
-                <option value="Yesterday">Yesterday</option>
-                <option value="Last 7 Days">Last 7 Days</option>
-                <option value="Last 30 Days">Last 30 Days</option>
-                <option value="This Month">This Month</option>
-                <option value="Last Month">Last Month</option>
-                <option value="Custom Range">Custom Range</option>
-            </select>
-            <button id="exportButton" class="btn btn-primary ms-2 " onclick="exportData()">Export  <i class="ti tabler-chevron-right "></i> </button>
-              <!-- Date Input Group -->
-            
-          </div>
-          
-          <!-- Custom Range Date Inputs (Initially Hidden) -->
-          <div id="customDateInputs" class="mt-2 d-none">
-              <input type="date" id="startDate" class="form-control mb-2">
-              <input type="date" id="endDate" class="form-control">
-          </div>
-          
-  
-  <!-- Date input for Custom Range (initially hidden) -->
-  <div id="customDateInputs" style="display: none; margin-top: 10px;">
-  <input type="date" id="startDate" class="form-control mb-2">
-  <input type="date" id="endDate" class="form-control">
-  </div>
-  
-        </div>
-        
-      </div>
 
-        <table class="employee-sales table">
-          <thead>
+        <table class="table table-striped" id = "employeeSales">
+          <thead class="table-light">
             <tr>
               <th>Employee Name</th>
               <th>No. of Service Sales</th>
-              <th>No. of Prodcut Sales</th>
+              <th>No. of Product Sales</th>
               <th>No. of Clients</th>
               <th>Total Service Sales</th>
               <th>Total Product Sales</th>         
               <th>Total Sales</th>
-              <th>  Actions</th>
+              <th>Actions</th>
           </tr>
           </thead>
           <tbody id="employeeSalesTable">
@@ -753,7 +708,7 @@
       
       <script src="../../assets/vendor/libs/pickr/pickr.js"></script>
     
-
+<script src="../../assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
     
       <script src="../../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
       
@@ -780,6 +735,43 @@
     <!-- Page JS -->
   <script src="../../assets/js/employee-sales.js"></script>
  
+ <script src="../../assets/employee-sales.json"></script>
+
+ <script>
+    $(document).ready(function () {
+        var table = $("#employeeSales").DataTable({
+            ajax: {
+                url: '/assets/employee-sales.json',
+                dataSrc: ""
+            },
+            columns: [
+                { data: 'employee_name' },
+                { data: 'sales_service_no' },
+                { data: 'product_sales_no' },
+                { data: 'client_no' },
+                { data: 'total_service_sale' },
+                { data: 'total_product_sale' },
+                { data: 'total_sales' },
+                {
+                    data: null,
+                    render: function (data, type, row) {
+                        return `<div class='d-flex gap-2'>
+                            <button class='btn btn-success btn-sm'>View</button>
+                            <button class='btn btn-info btn-sm'>Edit</button>
+                            <button class='btn btn-danger btn-sm'>Delete</button>
+                        </div>`;
+                    }
+                }
+            ],
+            responsive: true,
+            lengthMenu: [10, 25, 50, 75, 100],
+            pageLength: 10,
+            dom: '<"row"<"col-sm-12 col-md-6"l><"col-sm-12 col-md-6"f>>' +
+                 '<"row"<"col-sm-12"tr>>' +
+                 '<"row"<"col-sm-12 col-md-5"i><"col-sm-12 col-md-7"p>>'
+        });
+    });
+</script>
  
   <script>
     // Fetch JSON data and populate the table
@@ -790,6 +782,7 @@
             data.forEach(item => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
+                <tr>
                      <td>${item.employee_name}</td>
                 <td>${item.sales_service_no}</td>
                 <td>${item.product_sales_no}</td>
@@ -798,7 +791,8 @@
                 <td>${item.total_product_sale}</td>
                 <td>${item.total_sales}</td>
                     <td  class='d-flex gap-1'><button class="btn btn-primary">View</button> <button class="btn btn-danger"> Edit</button><button class="btn btn-danger"> Delete</button></td>
-                `;
+               <tr>
+                    `;
                 tableBody.appendChild(row);
             });
         })
@@ -840,7 +834,27 @@
   }
 </script>
 
-
+<link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/flatpickr/flatpickr.css"
+    />
+    <!-- Row Group CSS -->
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/datatables-rowgroup-bs5/rowgroup.bootstrap5.css"
+    />
 
 
 
