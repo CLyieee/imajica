@@ -668,7 +668,7 @@
 
 
         <div class="container">
-            <table class="table">
+            <table class="table" id="servicesTable">
                 <thead>
                     <tr>
                         <th>   Employee Name</th>
@@ -721,31 +721,44 @@ function searchCommission() {
 
 <script>
     // Fetch JSON data and populate the table
-    fetch('/assets/comissions.json') // Use relative path
-        .then(response => response.json())
-        .then(data => {
-            const tableBody = document.getElementById('commissionTableBody');
-            data.forEach(item => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                   <td>${item.employee_name}</td>
-            <td>${item.sales_service_no}</td>
-            <td>${item.product_sales_no}</td>
-             <td>${item.client_no}</td>
-            <td>${item.total_service_sale}</td>
+    fetch('/assets/comissions.json')
+    .then(response => response.json())
+    .then(data => {
+        const tableBody = document.getElementById('commissionTableBody');
+        data.forEach(item => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${item.employee_name}</td>
+                <td>${item.sales_service_no}</td>
+                <td>${item.product_sales_no}</td>
+                <td>${item.client_no}</td>
+                <td>${item.total_service_sale}</td>
                 <td>${item.total_product_sale}</td>
-            <td>${item.total_service_commission}</td>
-             <td>${item.total_session_commission}</td>
-            <td>${item.total_product_commission}</td>
-            <td>${item.total_commision}</td>
+                <td>${item.total_service_commission}</td>
+                <td>${item.total_session_commission}</td>
+                <td>${item.total_product_commission}</td>
+                <td>${item.total_commision}</td>
+                <td>
+                     <div class='d-flex gap-2'><button class='btn btn-primary'>View</button><button class='btn btn-danger'>Edit</button><button class='btn btn-primary'>Delete</button></div>
+                   
+                </td>
+            `;
+            tableBody.appendChild(row);
+        });
 
-
-                 
-                    `;
-                tableBody.appendChild(row);
-            });
-        })
-        .catch(error => console.error('Error fetching the JSON data:', error));
+        // Initialize DataTable after populating data
+        $('#servicesTable').DataTable({
+            responsive: true,
+            dom: '<"row"<"col-sm-12 col-md-6"l><"col-sm-12 col-md-6"f>>' +
+                 '<"row"<"col-sm-12"tr>>' +
+                 '<"row"<"col-sm-12 col-md-5"i><"col-sm-12 col-md-7"p>>',
+            language: {
+                search: "",
+                searchPlaceholder: "Search records"
+            }
+        });
+    })
+    .catch(error => console.error('Error fetching the JSON data:', error));
 </script>
           <!-- / Content -->
 
@@ -806,7 +819,7 @@ function searchCommission() {
     
     <script src="../../assets/vendor/libs/%40algolia/autocomplete-js.js"></script>
 
-    
+    <script src="../../assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js"></script>
       
       <script src="../../assets/vendor/libs/pickr/pickr.js"></script>
     
@@ -837,6 +850,19 @@ function searchCommission() {
     <!-- Page JS -->
   <script src="../../assets/js/commision.js"></script>
   <script src="../../assets/comissions.json"></script>
+
+  <script>
+      $(document).ready(function () {
+        var table = $("#servicesTable").DataTable();
+
+        // Filter by branch
+        $("#branchFilter").on("change", function () {
+          var selectedBranch = $(this).val();
+          table.column(0).search(selectedBranch).draw();
+        });
+      });
+    </script>
+
   </body>
 
 <!-- Mirrored from demos.pixinvent.com/vuexy-html-admin-template/html/vertical-menu-template/app-invoice-preview.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 22 Feb 2025 08:26:33 GMT -->
