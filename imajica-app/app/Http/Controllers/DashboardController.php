@@ -124,8 +124,23 @@ class DashboardController extends Controller
     public function system_settings()
     {
         return view('page.system-settings');
-
-
     }
+    public function new_services()
+    {
+        return view('page.new-services');
+    }
+    public function services_list()
+    {
+        return view('page.services-list');
+    }
+    public function new_user()
+    {
+        return view('page.new-user');
+    }
+    public function user_list()
+    {
+        return view('page.user-list');
+    }
+
 }
 

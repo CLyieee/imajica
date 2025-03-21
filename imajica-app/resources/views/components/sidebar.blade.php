@@ -376,20 +376,21 @@
             </a>
             <ul class="menu-sub">
               <li class="menu-item">
-                <a href="new-user.html" class="menu-link">
+                <a href="/new-user" class="menu-link">
                   <div data-i18n="New User">New User</div>
                 </a>
               </li>
 
               <li class="menu-item">
-                <a href="users-list.html" class="menu-link">
+                <a href="/user-list" class="menu-link">
                   <div data-i18n="Users List">Users List</div>
                 </a>
               </li>
             </ul>
           </li>
 
-
+         
+         
 
           <li class="menu-item">
         <a href="/system-settings" class="menu-link">
