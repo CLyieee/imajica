@@ -637,15 +637,15 @@
               <th>Actions</th>
           </tr>
           </thead>
-          <tbody id="employeeSalesTable">
-           <!-- content here -->
-          </tbody>
+         <tbody>
+
+         </tbody>
         </table>
       </div>
     </div>
   </div>
 </div>
-          <!-- / Content -->
+
 
           
             
@@ -737,12 +737,12 @@
  
  <script src="../../assets/employee-sales.json"></script>
 
- <script>
-    $(document).ready(function () {
+<script>
+      $(document).ready(function () {
         var table = $("#employeeSales").DataTable({
             ajax: {
-                url: '/assets/employee-sales.json',
-                dataSrc: ""
+                url: '/assets/employee-sales.json', // Adjusted relative path to your JSON
+                dataSrc: '' // Assuming the JSON is an array of objects
             },
             columns: [
                 { data: 'employee_name' },
@@ -756,83 +756,18 @@
                     data: null,
                     render: function (data, type, row) {
                         return `<div class='d-flex gap-2'>
-                            <button class='btn btn-success btn-sm'>View</button>
-                            <button class='btn btn-info btn-sm'>Edit</button>
-                            <button class='btn btn-danger btn-sm'>Delete</button>
-                        </div>`;
+                                    <button class='btn btn-success'>View</button>
+                                    <button class='btn btn-info'>Edit</button>
+                                    <button class='btn btn-danger'>Delete</button>
+                                </div>`;
                     }
                 }
-            ],
-            responsive: true,
-            lengthMenu: [10, 25, 50, 75, 100],
-            pageLength: 10,
-            dom: '<"row"<"col-sm-12 col-md-6"l><"col-sm-12 col-md-6"f>>' +
-                 '<"row"<"col-sm-12"tr>>' +
-                 '<"row"<"col-sm-12 col-md-5"i><"col-sm-12 col-md-7"p>>'
+            ]
         });
     });
 </script>
- 
-  <script>
-    // Fetch JSON data and populate the table
-    fetch('/assets/employee-sales.json') // Use relative path
-        .then(response => response.json())
-        .then(data => {
-            const tableBody = document.getElementById('employeeSalesTable');
-            data.forEach(item => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                <tr>
-                     <td>${item.employee_name}</td>
-                <td>${item.sales_service_no}</td>
-                <td>${item.product_sales_no}</td>
-                <td>${item.client_no}</td>
-                 <td>${item.total_service_sale}</td>
-                <td>${item.total_product_sale}</td>
-                <td>${item.total_sales}</td>
-                    <td  class='d-flex gap-1'><button class="btn btn-primary">View</button> <button class="btn btn-danger"> Edit</button><button class="btn btn-danger"> Delete</button></td>
-               <tr>
-                    `;
-                tableBody.appendChild(row);
-            });
-        })
-        .catch(error => console.error('Error fetching the JSON data:', error));
-</script>
 
 
-
-<!-- ... existing code ... -->
-<script>
-  function searchEmployee() {
-    const input = document.getElementById('searchInput');
-    const filter = input.value.toLowerCase();
-    const table = document.getElementById('employeeSalesTable');
-    const tr = table.getElementsByTagName('tr');
-
-    // Check if the input is empty
-    if (!filter) {
-      for (let i = 0; i < tr.length; i++) {
-        tr[i].style.display = ""; // Show all rows if input is empty
-      }
-      return;
-    }
-
-    for (let i = 0; i < tr.length; i++) {
-      const td = tr[i].getElementsByTagName('td');
-      let found = false;
-      for (let j = 0; j < td.length; j++) {
-        if (td[j]) {
-          const txtValue = td[j].textContent || td[j].innerText;
-          if (txtValue.toLowerCase().indexOf(filter) > -1) {
-            found = true;
-            break;
-          }
-        }
-      }
-      tr[i].style.display = found ? "" : "none"; // Show or hide the row based on search
-    }
-  }
-</script>
 
 <link
       rel="stylesheet"

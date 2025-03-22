@@ -106,8 +106,6 @@
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     
       <script src="../../assets/js/config.js"></script>
-      <script src="../../assets/comissions.json"> </script>
-      <script src="../../assets/js/commision.js" defer></script>
 
   </head>
 
@@ -559,150 +557,112 @@
       .card-total-commissions {
       background-color: #fff3cd; /* Light yellow */
       }
+      .datatable-card {
+        width: 500%;
+        margin: 0 auto;
+        max-width: 1400px;
+    }
 
+    /* Adjust table padding */
+    .datatable-container {
+        padding: 1.5rem;
+    }
+
+    .table {
+        width: 100% !important; 
+        min-width: 1000px;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .datatable-card {
+            width: 500%;
+            margin: 0;
+        }
+        
+        .datatable-container {
+            padding: 1rem;
+        }
+    }
       
       </style>
 
-<!-- / Navbar -->
-<div class="content-wrapper">
-  <!-- Content -->
-  <div class="container flex-grow-1 container-p-y">
-    <div class="row">
-      <div class="col-20">
-        <!-- New Section: Commission for Employee -->
-        <h4 class="fw-bold py-3 mb-4">Commission for Employees</h4>
 
-        <div class="card mb-4">
-          <div class="card-body">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="card card-custom card-total-sales">
-                  <div class="card-body d-flex justify-content-between align-items-center">
-                    <div>
-                      <p class="card-text"><strong>Total Sales:</strong></p>
-                      <h4 class="text-black">₱3,178,492.00</h4>
-                    </div>
-                    <i class="icon-base ti tabler-chart-pie icon-lg"></i>
-                  </div>
-                </div>
-              </div>
+    <!-- Content wrapper -->
+    <div class="content-wrapper">
+          <!-- Content -->
+          <div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4">Employee Sales</h4>
 
-              <div class="col-md-4">
-                <div class="card card-custom card-monthly-commissions">
-                  <div class="card-body d-flex justify-content-between align-items-center">
-                    <div>
-                      <p class="card-text"><strong>Monthly Commissions</strong></p>
-                      <h4 class="text-black">₱4,850.50</h4>
-                    </div>
-                    <i class="icon-base ti tabler-calendar icon-lg"></i>
-                  </div>
-                </div>
-              </div>
 
+    <div class="card datatable-card mb-4">
+      <div class="card-body ">
+          <div class="row">
               <div class="col-md-4">
-                <div class="card card-custom card-total-commissions">
-                  <div class="card-body d-flex justify-content-between align-items-center">
-                    <div>
-                      <p class="card-text"><strong>Total Commissions</strong></p>
-                      <h4 class="text-black">₱89,685.00</h4>
-                    </div>
-                    <i class="icon-base ti tabler-currency-dollar icon-lg"></i>
+                  <div class="card card-custom card-total-sales">
+                      <div class="card-body d-flex justify-content-between align-items-center">
+                          <div>
+                              <p class="card-text"><strong>Total Sales:</strong></p>
+                              <h4 class="text-black">₱1,178,492.00</h4>
+                          </div>
+                          <i class="icon-base ti tabler-chart-pie icon-lg"></i>
+                      </div>
                   </div>
-                </div>
               </div>
-            </div>
+    
+              <div class="col-md-4">
+                  <div class="card card-custom card-monthly-commissions">
+                      <div class="card-body d-flex justify-content-between align-items-center">
+                          <div>
+                              <p class="card-text"><strong>Monthly Commission</strong></p>
+                              <h4 class="text-black">₱1,850.50</h4>
+                          </div>
+                          <i class="icon-base ti tabler-calendar icon-lg"></i>
+                      </div>
+                  </div>
+              </div>
+              
+              <div class="col-md-4">
+                  <div class="card card-custom card-total-commissions">
+                      <div class="card-body d-flex justify-content-between align-items-center">
+                          <div>
+                              <p class="card-text"><strong>Total Commission</strong></p>
+                              <h4 class="text-black">₱6,790.50</h4>
+                          </div>
+                          <i class="icon-base ti tabler-currency-dollar icon-lg"></i>
+                      </div>
+                  </div>
+              </div>
           </div>
-        </div>
-
-        <!-- Table Section -->
-        <div class="card">
-          <div class="card-body">
-            <div class="container">
-              <div class="table-responsive">
-                <table id="servicesTable" class="table table-striped">
-                  <thead class="table-light">
-                    <tr>
-                      <th>Employee Name</th>
-                      <th>No. of Service Sales</th>
-                      <th>No. of Product Sales</th>
-                      <th>No. of Clients</th>
-                      <th>Total Service Sales</th>
-                      <th>Total Product Sales</th>
-                      <th>Total Service Commission</th>
-                      <th>Total Session Commission</th>
-                      <th>Total Product Commission</th>
-                      <th>Total Commission</th>
-                      <th>Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody id="commissionTableBody">
-                    <!-- Dynamic data will be inserted here -->
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
-  </div>
+    
+
+    <div class="card datatable-card ">
+      <div class="card-body datatable-container ">
+     
+        <table class="table table-striped" id = "commissionsTable">
+          <thead class="table-light">
+            <tr>
+              <th>Employee Name</th>
+              <th>Service Sales no</th>
+              <th>Product Sales no</th>
+              <th>Clients no</th>
+              <th>Total Service Sales</th>
+              <th>Total Product Sales</th>         
+              <th>Total Service Commission</th>
+              <th>Total Session Commission</th>
+              <th>Total Product Commission</th>
+              <th>Total Commission</th>
+              <th>Action</th>
+          </tr>
+          </thead>
+         
+        </table>
+      </div>
+    </div>
+
 </div>
-
-<!-- Optional CSS Fix for Table Layout -->
-<style>
-  #servicesTable {
-    table-layout: fixed;
-    width: 100%;
-  }
-  th, td {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: center;
-  }
-  .table-responsive {
-    overflow-x: auto;
-  }
-</style>
-
-<!-- End of Commission for Employee -->
-
-<!-- Add Search Functionality -->
-<script>
-function searchCommission() {
-    const input = document.getElementById('searchInput');
-    const filter = input.value.toLowerCase();
-    const table = document.getElementById('commissionTableBody');
-    const tr = table.getElementsByTagName('tr');
-
-    for (let i = 0; i < tr.length; i++) {
-        const td = tr[i].getElementsByTagName('td');
-        let found = false;
-        for (let j = 0; j < td.length; j++) {
-            if (td[j]) {
-                const txtValue = td[j].textContent || td[j].innerText;
-                if (txtValue.toLowerCase().indexOf(filter) > -1) {
-                    found = true;
-                    break;
-                }
-            }
-        }
-        tr[i].style.display = found ? "" : "none";
-    }
-}
-
-</script>
-
-
-
-
-
-
-          <!-- / Content -->
-
-          
-            
+</div>
 
 <!-- Footer -->
 <footer class="content-footer footer bg-footer-theme">
@@ -793,39 +753,111 @@ function searchCommission() {
 
 
 
-  <script>
 
-$(document).ready(function () {
-    var table = $("#servicesTable").DataTable({
-        ajax: {
-            url: '/assets/comissions.json',
-            dataSrc:''
-        },
-        columns: [
-            { data: 'employee_name' },
-            { data: 'sales_service_no' },
-            { data: 'product_sales_no' },
-            { data: 'client_no' }, 
-            { data: 'total_service_sale' },
-            { data: 'total_product_sale' },
-            { data: 'total_service_commission' },
-            { data: 'total_session_commission' },
-            { data: 'total_product_commission' },
-            { data: 'total_commision' },
-            {
-                data: null,
-                render: function (data, type, row) {
-                    return `<div class='d-flex gap-2'>
-                                <button class='btn btn-success btn-sm'>View</button>
-                                <button class='btn btn-info btn-sm'>Edit</button>
-                                <button class='btn btn-danger btn-sm'>Delete</button>
-                            </div>`;
+
+
+  <script>
+      $(document).ready(function () {
+        var table = $("#commissionsTable").DataTable({
+            ajax: {
+                url: '/assets/comissions.json', // Adjusted relative path to your JSON
+                dataSrc: '' ,
+                responsive: true,
+                scrollX: true,
+                autoWidth: false
+            },
+            columns: [
+                { data: 'employee_name' },
+                { data: 'sales_service_no' },
+                { data: 'product_sales_no' },
+                { data: 'client_no' },
+                { data: 'total_service_sale' },
+                { data: 'total_product_sale' },
+                { data: 'total_service_commission' },
+                { data: 'total_session_commission' },
+                { data: 'total_product_commission' },
+                { data: 'total_commision' },
+                {
+                    data: null,
+                    render: function (data, type, row) {
+                        return `<div class='d-flex gap-2'>
+                                    <button class='btn btn-success btn-icon'><i class="ti tabler-eye"></i></button>
+                    <button class='btn btn-info btn-icon'><i class="ti tabler-edit"></i></button>
+                    <button class='btn btn-danger btn-icon'><i class="ti tabler-trash"></i></button>
+                                </div>`;
+                    }
                 }
-            }
-        ]
+            ]
+        });
     });
-});
 </script>
+
+<script>
+    $(document).ready(function() {
+        // Initialize DataTable
+        var table = $('#servicesTable').DataTable({
+            processing: true,
+            pageLength: 10,
+            dom: '<"row"<"col-md-6"l><"col-md-6"f>>' +
+                 '<"row"<"col-sm-12"tr>>' +
+                 '<"row"<"col-sm-12 col-md-5"i><"col-sm-12 col-md-7"p>>',
+            language: {
+                search: "",
+                searchPlaceholder: "Search..."
+            }
+        });
+
+        // Fetch and populate data
+        fetch('/assets/comissions.json')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(item => {
+                    table.row.add([
+                        item.employee_name,
+                        item.sales_service_no,
+                        item.product_sales_no,
+                        item.client_no,
+                        item.total_service_sale,
+                        item.total_product_sale,
+                        item.total_service_commission,
+                        item.total_session_commission,
+                        item.total_product_commission,
+                        item.total_commision,
+                        `<div class='d-flex gap-2'>
+                                  <button class='btn btn-success'>View</button>
+                                    <button class='btn btn-info'>Edit</button>
+                                    <button class='btn btn-danger'>Delete</button>
+                                </div>`
+                    ]).draw(false);
+                });
+            })
+            .catch(error => console.error('Error fetching the JSON data:', error));
+    });
+</script>
+
+
+
+<link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/datatables-buttons-bs5/buttons.bootstrap5.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/flatpickr/flatpickr.css"
+    />
+    <!-- Row Group CSS -->
+    <link
+      rel="stylesheet"
+      href="../../assets/vendor/libs/datatables-rowgroup-bs5/rowgroup.bootstrap5.css"
+    />
 
 
 

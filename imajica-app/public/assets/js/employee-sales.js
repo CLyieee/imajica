@@ -97,8 +97,14 @@ document.addEventListener("DOMContentLoaded", function(e) {
                 <td>${item.total_product_sale}</td>
                 <td>${item.total_sales}</td>
 
-                 <td  class='d-flex gap-1'>
-                   <button class='btn btn-success'>View</button><button class='btn btn-info'>Edit</button><button class='btn btn-danger'>Delete</button>
+                 <td>
+            
+                <div class='d-flex gap-2'>
+                            <button class='btn btn-success btn-sm'>View</button>
+                            <button class='btn btn-info btn-sm'>Edit</button>
+                            <button class='btn btn-danger btn-sm'>Delete</button>
+                        </div>
+                
                    <td>
 
                 </tr>

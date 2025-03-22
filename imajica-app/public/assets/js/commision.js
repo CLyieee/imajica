@@ -103,8 +103,12 @@ document.addEventListener("DOMContentLoaded", function(e) {
              <td>${item.total_session_commission}</td>
             <td>${item.total_product_commission}</td>
             <td>${item.total_commision}</td>
-            <td  class='d-flex gap-2'>
-                   <button class='btn btn-success'>View</button><button class='btn btn-info'>Edit</button><button class='btn btn-danger'>Delete</button>
+            <td>
+                  <div class='d-flex gap-2'>
+                                    <button class='btn btn-success'>Vieww</button>
+                                    <button class='btn btn-info'>Edit</button>
+                                    <button class='btn btn-danger'>Delete</button>
+                                </div>
                    <td>
                     </tr>
                 `;

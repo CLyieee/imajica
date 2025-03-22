@@ -568,7 +568,7 @@
 }
         </style>
 
-        <!-- Content wrapper -->
+
  <div class="content-wrapper">
           <!-- Content -->
     <div class="container-xxl flex-grow-1 container-p-y">
@@ -620,8 +620,6 @@
                 <div class="card">
                   <div class="card-body">
                                   
-                        
-                        <div class="table-responsive container">
                             <table id="servicesTable" class="table table-striped">
                               <thead class="table-light">
                                   <tr>
@@ -636,9 +634,7 @@
                                     <th>Action</th>
                                   </tr>
                               </thead>
-                              <tbody id="salesTableBody">
-                                  <!-- Sales data will be populated here -->
-                              </tbody>
+                            
                           </table>
                       </div>
                     </div>
@@ -648,8 +644,8 @@
 
     </div>
   </div>
-</div>
-          <!-- / Content -->
+
+
 
           
             
