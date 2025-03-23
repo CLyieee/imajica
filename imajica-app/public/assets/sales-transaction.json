@@ -98,6 +98,106 @@
       "cashier": "Peter Parker",
       "amount": 40.00,
       "transaction_date": "2025-03-09"
-    }
+    },
+      {
+        "transaction_id": "TRX011",
+        "client_name": "Chris Hemsworth",
+        "service_product": "Full Car Detailing",
+        "payment_terms_amount": "$250",
+        "customer": "Chris Hemsworth",
+        "cashier": "Thor Odinson",
+        "amount": 250.00,
+        "transaction_date": "2025-03-08"
+      },
+      {
+        "transaction_id": "TRX012",
+        "client_name": "Benedict Cumberbatch",
+        "service_product": "AC Repair",
+        "payment_terms_amount": "$180",
+        "customer": "Benedict Cumberbatch",
+        "cashier": "Stephen Strange",
+        "amount": 180.00,
+        "transaction_date": "2025-03-07"
+      },
+      {
+        "transaction_id": "TRX013",
+        "client_name": "Paul Rudd",
+        "service_product": "Windshield Replacement",
+        "payment_terms_amount": "$300",
+        "customer": "Paul Rudd",
+        "cashier": "Scott Lang",
+        "amount": 300.00,
+        "transaction_date": "2025-03-06"
+      },
+      {
+        "transaction_id": "TRX014",
+        "client_name": "Jeremy Renner",
+        "service_product": "Transmission Fluid Change",
+        "payment_terms_amount": "$90",
+        "customer": "Jeremy Renner",
+        "cashier": "Clint Barton",
+        "amount": 90.00,
+        "transaction_date": "2025-03-05"
+      },
+      {
+        "transaction_id": "TRX015",
+        "client_name": "Elizabeth Olsen",
+        "service_product": "Suspension Check",
+        "payment_terms_amount": "$75",
+        "customer": "Elizabeth Olsen",
+        "cashier": "Wanda Maximoff",
+        "amount": 75.00,
+        "transaction_date": "2025-03-04"
+      },
+      {
+        "transaction_id": "TRX016",
+        "client_name": "Samuel Jackson",
+        "service_product": "Security System Installation",
+        "payment_terms_amount": "$350",
+        "customer": "Samuel Jackson",
+        "cashier": "Nick Fury",
+        "amount": 350.00,
+        "transaction_date": "2025-03-03"
+      },
+      {
+        "transaction_id": "TRX017",
+        "client_name": "Brie Larson",
+        "service_product": "Paint Touch-up",
+        "payment_terms_amount": "$160",
+        "customer": "Brie Larson",
+        "cashier": "Carol Danvers",
+        "amount": 160.00,
+        "transaction_date": "2025-03-02"
+      },
+      {
+        "transaction_id": "TRX018",
+        "client_name": "Don Cheadle",
+        "service_product": "Wheel Alignment",
+        "payment_terms_amount": "$80",
+        "customer": "Don Cheadle",
+        "cashier": "James Rhodes",
+        "amount": 80.00,
+        "transaction_date": "2025-03-01"
+      },
+      {
+        "transaction_id": "TRX019",
+        "client_name": "Chadwick Boseman",
+        "service_product": "Premium Car Wash",
+        "payment_terms_amount": "$45",
+        "customer": "Chadwick Boseman",
+        "cashier": "T'Challa",
+        "amount": 45.00,
+        "transaction_date": "2025-02-28"
+      },
+      {
+        "transaction_id": "TRX020",
+        "client_name": "Tom Hiddleston",
+        "service_product": "Diagnostic Check",
+        "payment_terms_amount": "$70",
+        "customer": "Tom Hiddleston",
+        "cashier": "Loki Laufeyson",
+        "amount": 70.00,
+        "transaction_date": "2025-02-27"
+      }
   ]
   
